@@ -42,6 +42,7 @@ const Footer: React.FC = () => {
                 <NavLink
                   key={item.name}
                   to={item.path}
+                  onClick={() => window.scrollTo(0, 0)}
                   className="hover:text-emerald-400 transition-colors"
                 >
                   {item.name}
@@ -64,6 +65,7 @@ const Footer: React.FC = () => {
                 <NavLink
                   key={index}
                   to={item.path}
+                  onClick={() => window.scrollTo(0, 0)}
                   className="hover:text-emerald-400 transition-colors"
                 >
                   {item.name}

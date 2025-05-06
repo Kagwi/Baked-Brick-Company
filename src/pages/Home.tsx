@@ -15,7 +15,7 @@ const Home: React.FC = () => {
       <Hero
         title="Transform Your Outdoor Space"
         subtitle="Creating beautiful, sustainable landscapes that bring your vision to life"
-        backgroundImage="https://github.com/Kagwi/Baked-Brick-Company/blob/main/IMG20250207075501.jpg?raw=true"
+        backgroundImage="https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick10.jpg?raw=true"
         showButtons={true}
       />
 
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <img
-                src="https://images.pexels.com/photos/4946995/pexels-photo-4946995.jpeg"
+                src="https://github.com/Kagwi/Baked-Brick-Company/blob/main/IMG20250207075501.jpg?raw=true"
                 alt="Landscaper working"
                 className="rounded-lg shadow-md w-full h-auto"
               />
@@ -113,7 +113,7 @@ const Home: React.FC = () => {
       {/* Call to Action */}
       <section 
         className="py-24 bg-cover bg-center" 
-        style={{ backgroundImage: 'url(https://images.pexels.com/photos/3651820/pexels-photo-3651820.jpeg)' }}
+        style={{ backgroundImage: 'url(https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick26.jpg?raw=true)' }}
       >
         <div className="absolute inset-0 bg-emerald-900/70"></div>
         <div className="container mx-auto px-4 relative z-10">

@@ -1,4 +1,4 @@
-[build]
+[dist]
   publish = "build" # or "dist", depending on your framework
   command = "npm run build" # or "yarn build", etc.
 

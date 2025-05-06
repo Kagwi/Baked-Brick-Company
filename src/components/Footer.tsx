@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
                 { name: 'Hardscaping', path: '/services' },
                 { name: 'Garden Maintenance', path: '/services' },
                 { name: 'Irrigation Systems', path: '/services' },
-                { name: 'Outdoor Lighting', path: '/services' },
+                { name: 'Landscaping Products', path: '/services' },
               ].map((item, index) => (
                 <NavLink
                   key={index}

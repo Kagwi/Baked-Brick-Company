@@ -115,10 +115,8 @@ const Home: React.FC = () => {
         className="py-24 bg-cover bg-center" 
         style={{ backgroundImage: 'url(https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick26.jpg?raw=true)' }}
       >
-        <div className='relative'>
         <div className="absolute inset-0 bg-emerald-900/70"></div>
         <div className="container mx-auto px-4 relative z-10">
-        <div/>
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-serif font-bold text-white mb-6">
              Ready to Transform Your Outdoor Space?

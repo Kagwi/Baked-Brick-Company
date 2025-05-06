@@ -31,7 +31,7 @@ const Hero: React.FC<HeroProps> = ({
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {overlay && (
-        <div className="absolute inset-0 bg-stone-900/50"></div>
+        <div className="absolute inset-0 bg-stone-900/50 lg:hidden"></div>
       )}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl">
@@ -51,7 +51,11 @@ const Hero: React.FC<HeroProps> = ({
                 </Button>
               </NavLink>
               <NavLink to="/contact">
-                <Button variant="outline" size="large" className="bg-white/10 backdrop-blur-sm text-white border-white">
+                <Button
+                  variant="outline"
+                  size="large"
+                  className="bg-white/10 backdrop-blur-sm text-white border-white"
+                >
                   Contact Us
                 </Button>
               </NavLink>

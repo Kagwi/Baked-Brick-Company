@@ -121,7 +121,7 @@ const Home: React.FC = () => {
           <h2 className="text-3xl font-serif font-bold text-white mb-6">
              Ready to Transform Your Outdoor Space?
           </h2>
-            <p className="text-white/90 text-lg mb-8">
+            <p className="text-green/90 text-lg mb-8">
               Contact us today to schedule a consultation and take the first step toward the landscape of your dreams.
             </p>
             <NavLink to="/contact">

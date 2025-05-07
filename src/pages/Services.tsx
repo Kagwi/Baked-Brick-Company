@@ -29,7 +29,7 @@ const Services: React.FC = () => {
       <Hero
         title="Our Services"
         subtitle="Comprehensive landscaping solutions for every outdoor space"
-        backgroundImage="https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick10.jpg?raw=true"
+        backgroundImage="https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick10.webp"
         showButtons={false}
         size="medium"
       />

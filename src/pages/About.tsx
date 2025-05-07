@@ -11,7 +11,7 @@ const About: React.FC = () => {
       <Hero
         title="About Baked Brick Landscaping"
         subtitle="Creating beautiful outdoor spaces since 2010"
-        backgroundImage="https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg"
+        backgroundImage="https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick10.jpg?raw=true"
         showButtons={false}
         size="medium"
       />

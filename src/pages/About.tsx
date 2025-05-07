@@ -36,7 +36,7 @@ const About: React.FC = () => {
             </div>
             <div>
               <img
-                src="https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick37.jpg?raw=true"
+                src="https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick37.webp"
                 alt="Landscaping team working"
                 className="rounded-lg shadow-md w-full h-auto"
               />

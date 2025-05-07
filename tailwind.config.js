@@ -48,9 +48,50 @@ export default {
           950: '#0c0a09',
         },
       },
+      screens: {
+        xs: '480px', // Added small screen support
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+      },
+      spacing: {
+        '7': '1.75rem', // Add custom spacing
+        '8': '2rem',
+        '9': '2.25rem',
+        '10': '2.5rem',
+      },
+      fontSize: {
+        sm: '.875rem', // 14px
+        base: '1rem', // 16px
+        lg: '1.125rem', // 18px
+        xl: '1.25rem', // 20px
+        '2xl': '1.5rem', // 24px
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#333', // Default text color for readability
+            h1: {
+              fontSize: '2.5rem', // Heading 1
+              fontWeight: '700',
+            },
+            h2: {
+              fontSize: '2rem', // Heading 2
+              fontWeight: '600',
+            },
+            p: {
+              fontSize: '1rem', // Paragraph text
+              lineHeight: '1.5',
+            },
+          },
+        },
+      },
     },
   },
   plugins: [
     require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'), // Added for form handling
   ],
 };

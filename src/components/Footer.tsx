@@ -42,6 +42,7 @@ const Footer: React.FC = () => {
                 <NavLink
                   key={item.name}
                   to={item.path}
+                  onClick={() => window.scrollTo(0, 0)}
                   className="hover:text-emerald-400 transition-colors"
                 >
                   {item.name}
@@ -59,11 +60,12 @@ const Footer: React.FC = () => {
                 { name: 'Hardscaping', path: '/services' },
                 { name: 'Garden Maintenance', path: '/services' },
                 { name: 'Irrigation Systems', path: '/services' },
-                { name: 'Outdoor Lighting', path: '/services' },
+                { name: 'Landscaping Products', path: '/services' },
               ].map((item, index) => (
                 <NavLink
                   key={index}
                   to={item.path}
+                  onClick={() => window.scrollTo(0, 0)}
                   className="hover:text-emerald-400 transition-colors"
                 >
                   {item.name}

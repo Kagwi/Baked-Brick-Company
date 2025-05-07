@@ -6,7 +6,7 @@ export const services: Service[] = [
     title: 'Landscape Design',
     description: 'Create a custom landscape plan tailored to your property and lifestyle with our professional design services.',
     longDescription: "Our landscape design process begins with a thorough site analysis and consultation to understand your goals, preferences, and budget. Our experienced designers then create a comprehensive plan that considers your property\'s unique characteristics, local climate conditions, and maintenance requirements. We provide detailed drawings and visualizations to help you envision the final result before any work begins.",
-    image: 'https://images.pexels.com/photos/1416572/pexels-photo-1416572.jpeg',
+    image: 'https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick30.jpg?raw=true',
     features: [
       'Custom design plans tailored to your property and preferences',
       'Sustainable planting schemes using native and adapted species',
@@ -20,7 +20,7 @@ export const services: Service[] = [
     title: 'Hardscaping',
     description: 'Add structure and functionality to your landscape with our expert hardscaping installation services.',
     longDescription: 'Hardscaping refers to the non-living elements of your landscape, including patios, walkways, retaining walls, and other structures. These features provide both function and beauty, creating outdoor living spaces and solving practical problems like erosion control. Our skilled craftsmen use quality materials and proven construction techniques to build hardscape elements that will stand the test of time while complementing your home\'s architecture and your landscape\'s natural features.',
-    image: 'https://images.pexels.com/photos/6474541/pexels-photo-6474541.jpeg',
+    image: 'https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick35.jpg?raw=true',
     features: [
       'Patios and outdoor living spaces',
       'Stone and brick walkways',
@@ -35,7 +35,7 @@ export const services: Service[] = [
     title: 'Garden Maintenance',
     description: 'Keep your landscape looking its best year-round with our comprehensive maintenance services.',
     longDescription: 'Regular maintenance is essential to preserve the beauty and health of your landscape investment. Our maintenance programs are tailored to your property\'s specific needs and can include everything from routine lawn care to seasonal plantings and specialized tree service. Our trained professionals use sustainable practices that promote plant health while minimizing environmental impact.',
-    image: 'https://images.pexels.com/photos/13537208/pexels-photo-13537208.jpeg',
+    image: 'https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick12.jpg?raw=true',
     features: [
       'Regular lawn care and mowing',
       'Seasonal clean-up and mulching',
@@ -50,7 +50,7 @@ export const services: Service[] = [
     title: 'Irrigation Systems',
     description: 'Ensure your landscape receives the perfect amount of water with our efficient irrigation solutions.',
     longDescription: 'A properly designed and installed irrigation system saves water while keeping your landscape healthy and beautiful. We design custom systems that consider your property\'s specific conditions, plant water requirements, and local water restrictions. Our systems include smart controllers, efficient sprinkler heads, and drip irrigation components to deliver water exactly where it\'s needed, reducing waste and promoting plant health.',
-    image: 'https://images.pexels.com/photos/906098/pexels-photo-906098.jpeg',
+    image: 'https://github.com/Kagwi/Baked-Brick-Company/blob/main/Irrigation.jpg?raw=true',
     features: [
       'Custom system design for optimal coverage',
       'Water-efficient sprinkler heads and nozzles',

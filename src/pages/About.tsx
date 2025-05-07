@@ -23,13 +23,15 @@ const About: React.FC = () => {
             <div>
               <h2 className="text-3xl font-serif font-bold text-stone-800 mb-6">Our Story</h2>
               <p className="text-stone-600 mb-4">
-                Baked Brick Landscaping was founded in 2010 by James and Elizabeth Green, who shared a passion for creating beautiful outdoor spaces that enhance people's lives and respect the natural environment.
+                Baked Brick is a premier landscaping company based in Kenya, dedicated to transforming outdoor spaces into functional, sustainable, and visually stunning environments. 
+                Since our establishment in 2017, we have partnered with homeowners, businesses, and institutions to design and deliver tailored landscaping solutions that reflect both natural beauty and practical value.              </p>
+              <p className="text-stone-600 mb-4">
+                Our approach combines creative design with environmental responsibility, using natural materials and eco-friendly practices to craft landscapes that are not only aesthetically pleasing but also long-lasting and efficient. 
+                Whether it's a serene garden, a bold hardscape, or a fully integrated outdoor system, we ensure every detail reflects quality, purpose, and craftsmanship.
               </p>
               <p className="text-stone-600 mb-4">
-                What started as a small family business has grown into a full-service landscaping company, but we've never lost sight of our core values: quality craftsmanship, personalized service, and sustainable practices.
-              </p>
-              <p className="text-stone-600 mb-4">
-                Over the years, we've had the privilege of working with hundreds of homeowners and businesses throughout Georgia, transforming ordinary outdoor spaces into extraordinary landscapes that reflect each client's unique vision and lifestyle.
+                At the heart of our work is a client-centered philosophy—every space we create is shaped by the unique preferences and lifestyle of the people we serve. 
+                From concept to completion, our team is committed to delivering excellence, innovation, and professionalism in every project.
               </p>
             </div>
             <div>
@@ -142,22 +144,7 @@ const About: React.FC = () => {
                 name: 'James Green',
                 title: 'Founder & Lead Designer',
                 image: 'https://images.pexels.com/photos/1139743/pexels-photo-1139743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-              },
-              {
-                name: 'Elizabeth Green',
-                title: 'Co-Founder & Plant Specialist',
-                image: 'https://images.pexels.com/photos/5794559/pexels-photo-5794559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-              },
-              {
-                name: 'Michael Chen',
-                title: 'Hardscape Specialist',
-                image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-              },
-              {
-                name: 'Sarah Martinez',
-                title: 'Sustainability Consultant',
-                image: 'https://images.pexels.com/photos/2613260/pexels-photo-2613260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-              },
+              }
             ].map((member, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
                 <div className="aspect-w-1 aspect-h-1">

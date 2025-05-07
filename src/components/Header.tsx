@@ -25,7 +25,7 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center">
           <NavLink to="/" className="flex items-center space-x-2">
             <img 
-              src="/logo.png" 
+              src="https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick%20Logo.jpeg.jpg?raw=true" 
               alt="Baked Brick Logo" 
               className="h-8 w-8 object-contain"
             />

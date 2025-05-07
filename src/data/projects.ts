@@ -17,7 +17,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'Outdoor Relaxation',
+    title: 'Wall Retention',
     category: 'Garden Maintenance',
     image: 'https://github.com/Kagwi/Baked-Brick-Company/blob/main/Home%20Relaxation%20Area.jpg?raw=true',
     description: 'Drought-tolerant plants, rainwater collection, and efficient irrigation make this garden both beautiful and eco-friendly.'
@@ -31,9 +31,9 @@ export const projects: Project[] = [
   },
   {
     id: 5,
-    title: 'Outdoor Entertainment Area',
-    category: 'Outdoor Living',
-    image: 'https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick19.webp',
+    title: 'Wall Retention',
+    category: 'Landscape Design',
+    image: 'https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Wall%20retention.webp',
     description: 'Custom pergola, built-in seating, and an outdoor kitchen create the perfect space for gathering with friends and family.'
   },
   {

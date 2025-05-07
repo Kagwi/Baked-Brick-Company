@@ -12,6 +12,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
     <article className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
       <div className="relative">
         <img
+          src={post.coverImage}
           alt={post.title}
           className="w-full h-56 object-cover"
         />

@@ -17,7 +17,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'Sustainable Relaxation Design',
+    title: 'Outdoor Relaxation',
     category: 'Garden Maintenance',
     image: 'https://github.com/Kagwi/Baked-Brick-Company/blob/main/Home%20Relaxation%20Area.jpg?raw=true',
     description: 'Drought-tolerant plants, rainwater collection, and efficient irrigation make this garden both beautiful and eco-friendly.'

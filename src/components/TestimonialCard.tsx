@@ -20,8 +20,6 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
       </div>
       <p className="text-stone-700 mb-4 italic">{testimonial.quote}</p>
       <div className="flex items-center">
-        <div className="w-12 h-12 rounded-full overflow-hidden mr-3">
-        </div>
         <div>
           <h4 className="font-bold text-stone-800">{testimonial.name}</h4>
           <p className="text-stone-600 text-sm">{testimonial.location}</p>

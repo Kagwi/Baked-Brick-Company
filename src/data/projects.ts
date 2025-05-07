@@ -17,9 +17,9 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'Wall Retention',
+    title: 'Garden Maintenance Service',
     category: 'Garden Maintenance',
-    image: 'https://github.com/Kagwi/Baked-Brick-Company/blob/main/Home%20Relaxation%20Area.jpg?raw=true',
+    image: 'https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick11.webp',
     description: 'Drought-tolerant plants, rainwater collection, and efficient irrigation make this garden both beautiful and eco-friendly.'
   },
   {
@@ -34,7 +34,7 @@ export const projects: Project[] = [
     title: 'Wall Retention',
     category: 'Landscape Design',
     image: 'https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Wall%20retention.webp',
-    description: 'Custom pergola, built-in seating, and an outdoor kitchen create the perfect space for gathering with friends and family.'
+    description: 'Our wall retention service provides durable and expertly engineered retaining walls that prevent soil erosion and enhance landscape stability.'
   },
   {
     id: 6,

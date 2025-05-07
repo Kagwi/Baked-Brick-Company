@@ -26,7 +26,7 @@ export const projects: Project[] = [
     id: 4,
     title: 'Design and Build',
     category: 'Hardscaping',
-    image: 'https://github.com/Kagwi/Baked-Brick-Company/blob/main/Design%20and%20Build.PNG?raw=true',
+    image: 'https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick19.jpg?raw=true',
     description: 'Stone retaining walls transform a challenging slope into usable garden spaces with beautiful visual interest.'
   },
   {

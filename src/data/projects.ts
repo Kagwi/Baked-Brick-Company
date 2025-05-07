@@ -33,7 +33,7 @@ export const projects: Project[] = [
     id: 5,
     title: 'Outdoor Entertainment Area',
     category: 'Outdoor Living',
-    image: 'https://github.com/Kagwi/Baked-Brick-Company/blob/main/Design%20and%20Build.PNG?raw=true',
+    image: 'https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick19.webp',
     description: 'Custom pergola, built-in seating, and an outdoor kitchen create the perfect space for gathering with friends and family.'
   },
   {

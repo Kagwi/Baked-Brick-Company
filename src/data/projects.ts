@@ -40,7 +40,7 @@ export const projects: Project[] = [
     id: 6,
     title: 'Backyard Path',
     category: 'Landscape Design',
-    image: 'https://images.pexels.com/photos/5699665/pexels-photo-5699665.jpeg',
+    image: 'https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick4.webp',
     description: 'Natural stone stepping stones wind through shade-loving plants in this peaceful woodland garden.'
   }
 ];

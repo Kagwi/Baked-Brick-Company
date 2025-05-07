@@ -25,8 +25,8 @@ const Home: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <img
-                src="https://github.com/Kagwi/Baked-Brick-Company/blob/main/IMG20250207075501.jpg?raw=true"
-                alt="Landscaper working"
+                src="https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Landscaping.webp"
+                alt="Landscaper"
                 className="rounded-lg shadow-md w-full h-auto"
               />
             </div>

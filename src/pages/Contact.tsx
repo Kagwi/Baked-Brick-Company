@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
                   <Mail size={20} className="text-emerald-700" />
                 </div>
                 <h3 className="text-xl font-bold text-stone-800 mb-2">Email</h3>
-                <a href="support@bakedbrick.co.ke" className="text-stone-600 hover:text-emerald-700 transition-colors">
+                <a href="mailto:support@bakedbrick.co.ke" className="text-stone-600 hover:text-emerald-700 transition-colors">
                   support@bakedbrick.co.ke
                 </a>
               </div>
@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div>
                 <ContactForm />
               </div>
@@ -133,7 +133,6 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </section>
-      
     </div>
   );
 };

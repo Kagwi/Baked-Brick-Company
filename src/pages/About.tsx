@@ -127,43 +127,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Our Team */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-serif font-bold text-stone-800 mb-4">Meet Our Team</h2>
-            <p className="text-stone-600 max-w-3xl mx-auto">
-              Our dedicated team of professionals brings expertise, creativity, and passion to every project.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                name: 'James Green',
-                title: 'Founder & Lead Designer',
-                image: 'https://images.pexels.com/photos/1139743/pexels-photo-1139743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-              }
-            ].map((member, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <div className="aspect-w-1 aspect-h-1">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-64 object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-stone-800 mb-1">{member.name}</h3>
-                  <p className="text-stone-600">{member.title}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      
       {/* Testimonials */}
       <section className="py-16 bg-stone-50">
         <div className="container mx-auto px-4">

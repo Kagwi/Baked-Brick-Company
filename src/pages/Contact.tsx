@@ -33,8 +33,8 @@ const Contact: React.FC = () => {
                   <Mail size={20} className="text-emerald-700" />
                 </div>
                 <h3 className="text-xl font-bold text-stone-800 mb-2">Email</h3>
-                <a href="mailto:info@bakedbrick.com" className="text-stone-600 hover:text-emerald-700 transition-colors">
-                  info@bakedbrick.com
+                <a href="support@bakedbrick.co.ke" className="text-stone-600 hover:text-emerald-700 transition-colors">
+                  support@bakedbrick.co.ke
                 </a>
               </div>
 
@@ -60,21 +60,6 @@ const Contact: React.FC = () => {
                   We'd love to hear about your landscaping project! Fill out the form below and one of our experts will
                   get back to you within 24 hours to discuss how we can help transform your outdoor space.
                 </p>
-                <div className="mb-8">
-                  <h3 className="text-xl font-bold text-stone-800 mb-4">Our Location</h3>
-                  <div className="flex items-start mb-4">
-                    <MapPin size={20} className="text-emerald-700 mr-2 mt-1 flex-shrink-0" />
-                    <a 
-                      href="https://maps.google.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-stone-600 hover:text-emerald-700 transition-colors"
-                    >
-                      123 Garden Street<br />
-                      Greenville, GA 30222
-                    </a>
-                  </div>
-                </div>
                 <div>
                   <h3 className="text-xl font-bold text-stone-800 mb-4">Connect With Us</h3>
                   <div className="flex space-x-4">

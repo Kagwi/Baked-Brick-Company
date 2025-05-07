@@ -21,11 +21,6 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
       <p className="text-stone-700 mb-4 italic">{testimonial.quote}</p>
       <div className="flex items-center">
         <div className="w-12 h-12 rounded-full overflow-hidden mr-3">
-          <img 
-            src={testimonial.avatar} 
-            alt={testimonial.name}
-            className="w-full h-full object-cover" 
-          />
         </div>
         <div>
           <h4 className="font-bold text-stone-800">{testimonial.name}</h4>

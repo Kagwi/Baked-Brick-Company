@@ -60,37 +60,6 @@ const Blog: React.FC = () => {
           )}
         </div>
       </section>
-
-      {/* Newsletter Signup */}
-      <section className="py-16 bg-stone-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-serif font-bold text-stone-800 mb-4">
-              Subscribe to Our Newsletter
-            </h2>
-            <p className="text-stone-600 mb-6">
-              Stay up to date with our latest articles, tips, and special offers.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-2 max-w-lg mx-auto">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-grow px-4 py-2 border border-stone-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                required
-              />
-              <button
-                type="submit"
-                className="px-6 py-2 bg-emerald-700 text-white font-medium rounded-md hover:bg-emerald-800 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
-              >
-                Subscribe
-              </button>
-            </form>
-            <p className="text-stone-500 text-sm mt-4">
-              We respect your privacy and will never share your information.
-            </p>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

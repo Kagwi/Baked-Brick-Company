@@ -133,35 +133,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Map Section */}
-      <section className="h-[400px] bg-stone-100 relative">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center p-8 bg-white rounded-lg shadow-md z-10 max-w-md">
-            <h3 className="text-xl font-bold text-stone-800 mb-2">Visit Our Office</h3>
-            <p className="text-stone-600 mb-4">
-              123 Garden Street<br />
-              Greenville, GA 30222
-            </p>
-            <a 
-              href="https://maps.google.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block px-4 py-2 bg-emerald-700 text-white font-medium rounded-md hover:bg-emerald-800 transition-colors"
-            >
-              Get Directions
-            </a>
-          </div>
-        </div>
-        <div className="w-full h-full opacity-70">
-          {/* This would typically be an iframe with a map, but we'll use a placeholder image */}
-          <img 
-            src="https://images.pexels.com/photos/4386426/pexels-photo-4386426.jpeg" 
-            alt="Map location" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </section>
+      
     </div>
   );
 };

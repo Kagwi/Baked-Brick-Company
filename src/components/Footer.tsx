@@ -84,7 +84,7 @@ const Footer: React.FC = () => {
               </a>
               <a href="mailto:info@bakedbrick.com" className="flex items-center hover:text-emerald-400 transition-colors">
                 <Mail size={18} className="mr-2" />
-                <span>Support@bakedbrick.co.ke</span>
+                <span>support@bakedbrick.co.ke</span>
               </a>
               <a href="https://maps.google.com" className="flex items-center hover:text-emerald-400 transition-colors">
                 <MapPin size={18} className="mr-2" />
@@ -92,7 +92,8 @@ const Footer: React.FC = () => {
               </a>
               <div className="flex items-center">
                 <Clock size={18} className="mr-2" />
-                <span>Mon-Fri: 8am-6pm, Sat: 9am-4pm</span>
+                <span> Mon-Fri: 8:00 am - 6:00 pm </span>
+                <span> Sat:     9:00 am-4:00 pm </span>
               </div>
             </div>
           </div>

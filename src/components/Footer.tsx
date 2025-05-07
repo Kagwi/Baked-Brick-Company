@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
               </a>
               <div className="flex items-center">
                 <Clock size={18} className="mr-2" />
-                <span> Mon-Fri: 8:00 am - 6:00 pm Sat: 9:00 am-4:00 pm </span>
+                <span> Mon - Sat: 8:00 AM - 5:00 PM</span>
               </div>
             </div>
           </div>

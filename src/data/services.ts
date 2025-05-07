@@ -35,7 +35,7 @@ export const services: Service[] = [
     title: 'Garden Maintenance',
     description: 'Keep your landscape looking its best year-round with our comprehensive maintenance services.',
     longDescription: 'Regular maintenance is essential to preserve the beauty and health of your landscape investment. Our maintenance programs are tailored to your property\'s specific needs and can include everything from routine lawn care to seasonal plantings and specialized tree service. Our trained professionals use sustainable practices that promote plant health while minimizing environmental impact.',
-    image: 'https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick12.jpg?raw=true',
+    image: 'https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick12.webp',
     features: [
       'Regular lawn care and mowing',
       'Seasonal clean-up and mulching',

@@ -84,11 +84,11 @@ const Footer: React.FC = () => {
               </a>
               <a href="mailto:info@bakedbrick.com" className="flex items-center hover:text-emerald-400 transition-colors">
                 <Mail size={18} className="mr-2" />
-                <span>info@bakedbrick.com</span>
+                <span>Support@bakedbrick.co.ke</span>
               </a>
               <a href="https://maps.google.com" className="flex items-center hover:text-emerald-400 transition-colors">
                 <MapPin size={18} className="mr-2" />
-                <span>123 Garden Street, Greenville, GA 30222</span>
+                <span>123 Available for Consultations Countrywide</span>
               </a>
               <div className="flex items-center">
                 <Clock size={18} className="mr-2" />

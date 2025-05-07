@@ -5,7 +5,7 @@ export const projects: Project[] = [
     id: 1,
     title: 'Modern Backyard Retreat',
     category: 'Landscape Design',
-    image: 'https://github.com/Kagwi/Baked-Brick-Company/blob/main/Landscape%20Design.PNG?raw=true',
+    image: 'https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Landscape%20Design.webp',
     description: 'A complete backyard transformation featuring a custom patio, fire pit, and native plant garden.'
   },
   {

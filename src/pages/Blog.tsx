@@ -18,7 +18,7 @@ const Blog: React.FC = () => {
       <Hero
         title="Our Blog"
         subtitle="Expert advice, tips, and insights for your landscaping projects"
-        backgroundImage="https://images.pexels.com/photos/4946995/pexels-photo-4946995.jpeg"
+        backgroundImage="https://images.pexels.com/photos/888882/pexels-photo-888882.jpeg?auto=compress&cs=tinysrgb&w=600"
         showButtons={false}
         size="medium"
       />

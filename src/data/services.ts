@@ -50,7 +50,7 @@ export const services: Service[] = [
     title: 'Irrigation Systems',
     description: 'Ensure your landscape receives the perfect amount of water with our efficient irrigation solutions.',
     longDescription: 'A properly designed and installed irrigation system saves water while keeping your landscape healthy and beautiful. We design custom systems that consider your property\'s specific conditions, plant water requirements, and local water restrictions. Our systems include smart controllers, efficient sprinkler heads, and drip irrigation components to deliver water exactly where it\'s needed, reducing waste and promoting plant health.',
-    image: 'https://github.com/Kagwi/Baked-Brick-Company/blob/main/Irrigation.jpg?raw=true',
+    image: 'https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Irrigation.webp',
     features: [
       'Custom system design for optimal coverage',
       'Water-efficient sprinkler heads and nozzles',

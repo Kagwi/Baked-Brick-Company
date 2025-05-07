@@ -6,9 +6,9 @@ export const blogPosts: BlogPost[] = [
     title: 'The Benefits of Native Plants in Your Landscape',
     slug: 'benefits-of-native-plants',
     category: 'Garden Design',
-    date: 'June 15, 2024',
+    date: 'May 7, 2025',
     readTime: 5,
-    coverImage: 'https://images.pexels.com/photos/5137664/pexels-photo-5137664.jpeg',
+    coverImage: 'https://images.pexels.com/photos/6508396/pexels-photo-6508396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     excerpt: 'Native plants offer numerous benefits for your landscape, from lower maintenance to supporting local wildlife ecosystems.',
     content: `
       <p>Native plants are species that occur naturally in a region without human introduction. They\'ve evolved over thousands of years alongside local wildlife and growing conditions.</p>
@@ -44,8 +44,6 @@ export const blogPosts: BlogPost[] = [
     `,
     author: {
       name: 'Baked Brick',
-      avatar: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      role: 'Landscaping Expert',
     },
   },
   {
@@ -53,9 +51,9 @@ export const blogPosts: BlogPost[] = [
     title: 'Creating the Perfect Outdoor Living Space',
     slug: 'creating-perfect-outdoor-living-space',
     category: 'Hardscaping',
-    date: 'May 22, 2024',
+    date: 'May 10, 2024',
     readTime: 7,
-    coverImage: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg',
+    coverImage: 'https://images.pexels.com/photos/6869978/pexels-photo-6869978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     excerpt: 'Transform your backyard into a functional and beautiful outdoor living area with these expert design tips.',
     content: `
       <p>An outdoor living space extends your home\'s usable square footage and provides a place to relax, entertain, and connect with nature. Well-designed outdoor spaces can significantly increase your property value while enhancing your quality of life.</p>
@@ -93,8 +91,6 @@ export const blogPosts: BlogPost[] = [
     `,
     author: {
       name: 'Baked Brick',
-      avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      role: 'Landscaping Expert',
     },
   },
   {
@@ -104,7 +100,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Sustainability',
     date: 'April 10, 2024',
     readTime: 6,
-    coverImage: 'https://images.pexels.com/photos/1408221/pexels-photo-1408221.jpeg',
+    coverImage: 'https://images.pexels.com/photos/31914734/pexels-photo-31914734/free-photo-of-tranquil-wooden-chalets-in-a-verdant-forest-setting.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load',
     excerpt: 'Learn how sustainable landscaping practices can create beautiful outdoor spaces while protecting the environment.',
     content: `
       <p>Sustainable landscaping focuses on creating beautiful outdoor spaces that minimize negative environmental impacts. By adopting eco-friendly practices, you can enjoy a stunning landscape while conserving resources and protecting local ecosystems.</p>
@@ -172,8 +168,6 @@ export const blogPosts: BlogPost[] = [
     `,
     author: {
       name: 'Baked Brick',
-      avatar: 'https://images.pexels.com/photos/2613260/pexels-photo-2613260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      role: 'Landscaping Expert',
     },
   },
 ];

@@ -34,7 +34,7 @@ const About: React.FC = () => {
             </div>
             <div>
               <img
-                src="https://images.pexels.com/photos/4503819/pexels-photo-4503819.jpeg"
+                src="https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick37.jpg?raw=true"
                 alt="Landscaping team working"
                 className="rounded-lg shadow-md w-full h-auto"
               />

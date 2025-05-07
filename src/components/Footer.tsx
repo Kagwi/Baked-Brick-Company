@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
               Baked<span className="text-amber-500">Brick</span>
             </h3>
             <p className="mb-4">
-              Transforming outdoor spaces into beautiful, sustainable landscapes since 2010.
+              Transforming outdoor spaces into beautiful, sustainable landscapes since 2017.
             </p>
             <div className="flex space-x-4 mt-4">
               <a href="https://facebook.com" className="hover:text-emerald-400 transition-colors" aria-label="Facebook">

@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
       <Hero
         title="Contact Us"
         subtitle="Get in touch to discuss your landscaping project"
-        backgroundImage="https://images.pexels.com/photos/6913371/pexels-photo-6913371.jpeg"
+        backgroundImage="https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick10.jpg?raw=true"
         showButtons={false}
         size="medium"
       />

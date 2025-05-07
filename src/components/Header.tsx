@@ -23,7 +23,12 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
-          <NavLink to="/" className="flex items-center">
+          <NavLink to="/" className="flex items-center space-x-2">
+            <img 
+              src="/logo.png" 
+              alt="Baked Brick Logo" 
+              className="h-8 w-8 object-contain"
+            />
             <span className="text-2xl font-serif font-bold text-emerald-800">
               Baked<span className="text-amber-700">Brick</span>
             </span>

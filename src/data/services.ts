@@ -20,7 +20,7 @@ export const services: Service[] = [
     title: 'Hardscaping',
     description: 'Add structure and functionality to your landscape with our expert hardscaping installation services.',
     longDescription: 'Hardscaping refers to the non-living elements of your landscape, including patios, walkways, retaining walls, and other structures. These features provide both function and beauty, creating outdoor living spaces and solving practical problems like erosion control. Our skilled craftsmen use quality materials and proven construction techniques to build hardscape elements that will stand the test of time while complementing your home\'s architecture and your landscape\'s natural features.',
-    image: 'https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick35.jpg?raw=true',
+    image: 'https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick35.webp',
     features: [
       'Patios and outdoor living spaces',
       'Stone and brick walkways',

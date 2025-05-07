@@ -65,7 +65,7 @@ export const services: Service[] = [
     title: 'Landscaping Products',
     description: 'High-quality tools and materials for all your landscaping needs.',
     longDescription: 'We offer a comprehensive selection of professional-grade landscaping tools, equipment, and materials. Whether you\'re a DIY enthusiast or a professional landscaper, our products are carefully selected to ensure durability and performance. Our knowledgeable staff can help you choose the right tools and materials for your specific project needs.',
-    image: 'https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg',
+    image: 'https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Landscaping%20Products.webp',
     features: [
       'Hand Tools (Rakes, Hoes, Pruners, Edgers)',
       'Power Equipment (Mowers, Trimmers, Blowers)',

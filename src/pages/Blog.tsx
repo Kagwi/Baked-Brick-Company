@@ -18,7 +18,7 @@ const Blog: React.FC = () => {
       <Hero
         title="Our Blog"
         subtitle="Expert advice, tips, and insights for your landscaping projects"
-        backgroundImage="https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick10.jpg?raw=true"
+        backgroundImage="https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick10.webp"
         showButtons={false}
         size="medium"
       />

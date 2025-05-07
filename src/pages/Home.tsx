@@ -15,7 +15,7 @@ const Home: React.FC = () => {
       <Hero
         title="Transform Your Outdoor Space"
         subtitle="Creating beautiful, sustainable landscapes that bring your vision to life"
-        backgroundImage="https://images.pexels.com/photos/888882/pexels-photo-888882.jpeg?auto=compress&cs=tinysrgb&w=600"
+        backgroundImage="https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick10.jpg?raw=true"
         showButtons={true}
       />
 

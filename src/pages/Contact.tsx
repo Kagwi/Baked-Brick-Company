@@ -64,7 +64,7 @@ const Contact: React.FC = () => {
                   <h3 className="text-xl font-bold text-stone-800 mb-4">Connect With Us</h3>
                   <div className="flex space-x-4">
                     <a 
-                      href="https://facebook.com" 
+                      href="https://www.facebook.com/share/19NF3EBsHZ/" 
                       className="w-10 h-10 bg-emerald-700 text-white rounded-full flex items-center justify-center hover:bg-emerald-800 transition-colors"
                       aria-label="Facebook"
                     >
@@ -83,7 +83,7 @@ const Contact: React.FC = () => {
                       </svg>
                     </a>
                     <a 
-                      href="https://instagram.com" 
+                      href="https://www.instagram.com/bakedbrick.co.ke?igsh=eXFtYTZraW5leXIx" 
                       className="w-10 h-10 bg-emerald-700 text-white rounded-full flex items-center justify-center hover:bg-emerald-800 transition-colors"
                       aria-label="Instagram"
                     >
@@ -104,9 +104,9 @@ const Contact: React.FC = () => {
                       </svg>
                     </a>
                     <a 
-                      href="https://twitter.com" 
+                      href="https://www.tiktok.com/@bakedbrick.co.ke?_t=ZM-8wBbdlZ5k0N&_r=1" 
                       className="w-10 h-10 bg-emerald-700 text-white rounded-full flex items-center justify-center hover:bg-emerald-800 transition-colors"
-                      aria-label="Twitter"
+                      aria-label="TikTok"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
                 <Instagram size={20} />
               </a>
               <a href="https://www.tiktok.com/@bakedbrick.co.ke?_t=ZM-8wBbdlZ5k0N&_r=1" className="hover:text-emerald-400 transition-colors" aria-label="TikTok">
-                <TikTok size={20} />
+                <Twitter size={20} />
               </a>
             </div>
           </div>

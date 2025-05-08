@@ -78,9 +78,9 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-bold mb-4 text-white">Contact Us</h4>
             <div className="space-y-3">
-              <a href="tel:+11234567890" className="flex items-center hover:text-emerald-400 transition-colors">
+              <a href="tel:0722381743" className="flex items-center hover:text-emerald-400 transition-colors">
                 <Phone size={18} className="mr-2" />
-                <span>(123) 456-7890</span>
+                <span>0722381743</span>
               </a>
               <a href="mailto:info@bakedbrick.com" className="flex items-center hover:text-emerald-400 transition-colors">
                 <Mail size={18} className="mr-2" />
@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
               </a>
               <a href="https://maps.google.com" className="flex items-center hover:text-emerald-400 transition-colors">
                 <MapPin size={18} className="mr-2" />
-                <span>123 Available for Consultations Countrywide</span>
+                <span>Available for Consultations Countrywide</span>
               </a>
               <div className="flex items-center">
                 <Clock size={18} className="mr-2" />

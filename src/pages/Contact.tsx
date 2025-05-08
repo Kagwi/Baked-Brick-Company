@@ -23,8 +23,8 @@ const Contact: React.FC = () => {
                   <Phone size={20} className="text-emerald-700" />
                 </div>
                 <h3 className="text-xl font-bold text-stone-800 mb-2">Phone</h3>
-                <a href="tel:+11234567890" className="text-stone-600 hover:text-emerald-700 transition-colors">
-                  (123) 456-7890
+                <a href="tel: 0722381743" className="text-stone-600 hover:text-emerald-700 transition-colors">
+                   0722381743
                 </a>
               </div>
 

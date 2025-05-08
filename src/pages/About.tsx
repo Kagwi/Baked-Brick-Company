@@ -10,7 +10,7 @@ const About: React.FC = () => {
     <div>
       <Hero
         title="About Baked Brick Landscaping"
-        subtitle="Creating beautiful outdoor spaces since 2010"
+        subtitle="Creating beautiful outdoor spaces since 2017"
         backgroundImage="https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick10.webp"
         showButtons={false}
         size="medium"

@@ -16,14 +16,14 @@ const Footer: React.FC = () => {
               Transforming outdoor spaces into beautiful, sustainable landscapes since 2017.
             </p>
             <div className="flex space-x-4 mt-4">
-              <a href="https://facebook.com" className="hover:text-emerald-400 transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/share/19NF3EBsHZ/" className="hover:text-emerald-400 transition-colors" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
-              <a href="https://instagram.com" className="hover:text-emerald-400 transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/bakedbrick.co.ke?igsh=eXFtYTZraW5leXIx" className="hover:text-emerald-400 transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a href="https://twitter.com" className="hover:text-emerald-400 transition-colors" aria-label="Twitter">
-                <Twitter size={20} />
+              <a href="https://www.tiktok.com/@bakedbrick.co.ke?_t=ZM-8wBbdlZ5k0N&_r=1" className="hover:text-emerald-400 transition-colors" aria-label="TikTok">
+                <TikTok size={20} />
               </a>
             </div>
           </div>

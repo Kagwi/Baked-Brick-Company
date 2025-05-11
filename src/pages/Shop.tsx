@@ -73,46 +73,60 @@ const categories = [
 
 export default function Shop() {
   return (
-    <div className="min-h-screen bg-green-50 text-stone-800 px-6 py-12 font-agrandir">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen font-agrandir bg-green-50 text-stone-800">
 
-        {/* Title section with background image */}
-        <div
-          className="bg-cover bg-center rounded-xl mb-10"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1950&q=80')"
-          }}
-        >
-          <div className="bg-black/60 rounded-xl px-6 py-16 text-center">
-            <h1 className="text-5xl font-extrabold text-white">Landscaping Products</h1>
-            <p className="text-lg text-gray-100 mt-4 max-w-3xl mx-auto">
-              Discover our full range of professional landscaping tools and materials.
+      {/* Header + Title Section */}
+      <div
+        className="w-full bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1950&q=80')"
+        }}
+      >
+        <div className="bg-black/60 w-full">
+          {/* Simulated Header/Nav */}
+          <header className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h2 className="text-white text-2xl font-bold">Baked Brick</h2>
+            <nav className="space-x-6 text-white text-lg">
+              <Link to="/">Home</Link>
+              <Link to="/shop">Shop</Link>
+              <Link to="/contact">Contact</Link>
+            </nav>
+          </header>
+
+          {/* Title Section */}
+          <div className="text-center px-6 py-20 max-w-6xl mx-auto">
+            <h1 className="text-5xl font-extrabold text-white mb-4">Landscaping Products</h1>
+            <p className="text-lg text-gray-100 max-w-3xl mx-auto">
+              Discover our full range of professional landscaping tools and materials, grouped to make your search seamless and efficient.
             </p>
           </div>
         </div>
+      </div>
 
-        <div className="space-y-10">
-          {categories.map((category, idx) => (
-            <div key={idx} className="bg-white rounded-xl p-6 shadow-md">
-              <h2 className="text-2xl font-bold text-amber-800 mb-4 border-b border-amber-300 pb-1">
-                {category.name}
-              </h2>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 list-disc list-inside text-[17px]">
-                {category.items.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+      {/* Categories Section */}
+      <div className="px-6 py-12 max-w-6xl mx-auto space-y-10">
+        {categories.map((category, idx) => (
+          <div key={idx} className="bg-white rounded-xl p-6 shadow-md">
+            <h2 className="text-2xl font-bold text-amber-800 mb-4 border-b border-amber-300 pb-1">
+              {category.name}
+            </h2>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 list-disc list-inside text-[17px]">
+              {category.items.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
 
-        <div className="text-center mt-16">
-          <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
-            <button className="bg-amber-700 hover:bg-amber-800 text-white text-lg font-medium px-8 py-4 rounded-full shadow-lg transition duration-300">
-              Order a Customized Order
-            </button>
-          </Link>
-        </div>
+      {/* CTA Button */}
+      <div className="text-center mt-16 mb-10">
+        <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+          <button className="bg-amber-700 hover:bg-amber-800 text-white text-lg font-medium px-8 py-4 rounded-full shadow-lg transition duration-300">
+            Order a Customized Order
+          </button>
+        </Link>
       </div>
     </div>
   );

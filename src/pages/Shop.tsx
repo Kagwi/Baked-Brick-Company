@@ -73,12 +73,12 @@ const categories = [
 
 export default function Shop() {
   return (
-    <div className="min-h-screen bg-green-50 text-stone-800 px-6 py-12 font-agrandir">
+    <div className="min-h-screen bg-gradient-to-b from-green-700 to-green-100 text-stone-800 px-6 py-12 font-agrandir">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl font-extrabold text-green-900 mb-6 text-center">
+        <h1 className="text-5xl font-extrabold text-white mb-6 text-center drop-shadow-md">
           Landscaping Products
         </h1>
-        <p className="text-lg text-center text-stone-600 mb-10 max-w-3xl mx-auto">
+        <p className="text-lg text-center text-green-100 mb-10 max-w-3xl mx-auto">
           Discover our full range of professional landscaping tools and materials, grouped to make your search seamless and efficient.
         </p>
 

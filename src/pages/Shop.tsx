@@ -73,22 +73,22 @@ const categories = [
 
 export default function Shop() {
   return (
-    <div className="min-h-screen bg-green-50 text-stone-800 px-6 py-12">
+    <div className="min-h-screen bg-green-50 text-stone-800 px-6 py-12 font-agrandir">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-green-900 mb-6 text-center">
+        <h1 className="text-5xl font-extrabold text-green-900 mb-6 text-center">
           Landscaping Products
         </h1>
-        <p className="text-lg text-center text-stone-600 mb-10">
-          Browse our full range of tools and materials, thoughtfully organized for every landscaping need.
+        <p className="text-lg text-center text-stone-600 mb-10 max-w-3xl mx-auto">
+          Discover our full range of professional landscaping tools and materials, grouped to make your search seamless and efficient.
         </p>
 
         <div className="space-y-10">
           {categories.map((category, idx) => (
-            <div key={idx}>
-              <h2 className="text-2xl font-semibold text-amber-800 mb-4 border-b border-amber-300 pb-1">
+            <div key={idx} className="bg-white rounded-xl p-6 shadow-md">
+              <h2 className="text-2xl font-bold text-amber-800 mb-4 border-b border-amber-300 pb-1">
                 {category.name}
               </h2>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 list-disc list-inside pl-4 text-lg">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 list-disc list-inside text-[17px]">
                 {category.items.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
@@ -97,9 +97,9 @@ export default function Shop() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Link to="/contact">
-            <button className="bg-amber-700 hover:bg-amber-800 text-white text-lg font-medium px-6 py-3 rounded-full shadow-md transition duration-300">
+        <div className="text-center mt-16">
+          <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+            <button className="bg-amber-700 hover:bg-amber-800 text-white text-lg font-medium px-8 py-4 rounded-full shadow-lg transition duration-300">
               Order a Customized Order
             </button>
           </Link>

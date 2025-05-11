@@ -15,6 +15,15 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Shop', path: '/shop' }, // Added Shop
+    { name: 'Contact', path: '/contact' },
+  ];
+
   return (
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -36,13 +45,7 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {[
-              { name: 'Home', path: '/' },
-              { name: 'About', path: '/about' },
-              { name: 'Services', path: '/services' },
-              { name: 'Blog', path: '/blog' },
-              { name: 'Contact', path: '/contact' },
-            ].map((item) => (
+            {navItems.map((item) => (
               <NavLink
                 key={item.name}
                 to={item.path}
@@ -75,13 +78,7 @@ const Header: React.FC = () => {
         <div className="md:hidden bg-white absolute top-full left-0 w-full shadow-md">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
-              {[
-                { name: 'Home', path: '/' },
-                { name: 'About', path: '/about' },
-                { name: 'Services', path: '/services' },
-                { name: 'Blog', path: '/blog' },
-                { name: 'Contact', path: '/contact' },
-              ].map((item) => (
+              {navItems.map((item) => (
                 <NavLink
                   key={item.name}
                   to={item.path}

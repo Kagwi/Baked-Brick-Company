@@ -7,6 +7,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Shop from './pages/Shop';       // Import Shop before Contact
 import Contact from './pages/Contact';
 
 const App: React.FC = () => {
@@ -21,6 +22,7 @@ const App: React.FC = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/shop" element={<Shop />} />       {/* Shop page before Contact */}
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

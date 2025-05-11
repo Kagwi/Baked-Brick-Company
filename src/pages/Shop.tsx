@@ -88,7 +88,7 @@ export default function Shop() {
           <div className="text-center px-6 py-20 max-w-6xl mx-auto">
             <h1 className="text-5xl font-extrabold text-white mb-4">Landscaping Products</h1>
             <p className="text-lg text-gray-100 max-w-3xl mx-auto">
-              Discover our full range of professional landscaping tools and materials, grouped to make your search seamless and efficient.
+              Discover our full range of professional landscaping tools and materials.
             </p>
           </div>
         </div>

@@ -80,7 +80,7 @@ export default function Shop() {
         className="w-full bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1950&q=80')"
+            "url('https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick10.webp')"
         }}
       >
         <div className="bg-black/60 w-full">

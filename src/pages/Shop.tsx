@@ -84,16 +84,6 @@ export default function Shop() {
         }}
       >
         <div className="bg-black/60 w-full">
-          {/* Simulated Header/Nav */}
-          <header className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h2 className="text-white text-2xl font-bold">Baked Brick</h2>
-            <nav className="space-x-6 text-white text-lg">
-              <Link to="/">Home</Link>
-              <Link to="/shop">Shop</Link>
-              <Link to="/contact">Contact</Link>
-            </nav>
-          </header>
-
           {/* Title Section */}
           <div className="text-center px-6 py-20 max-w-6xl mx-auto">
             <h1 className="text-5xl font-extrabold text-white mb-4">Landscaping Products</h1>

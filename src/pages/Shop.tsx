@@ -75,12 +75,21 @@ export default function Shop() {
   return (
     <div className="min-h-screen bg-green-50 text-stone-800 px-6 py-12 font-agrandir">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl font-extrabold text-white mb-6 text-center">
-          Landscaping Products
-        </h1>
-        <p className="text-lg text-center text-stone-600 mb-10 max-w-3xl mx-auto">
-          Discover our full range of professional landscaping tools and materials, grouped to make your search seamless and efficient.
-        </p>
+
+        {/* Title section with background image */}
+        <div
+          className="bg-cover bg-center rounded-xl mb-10"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1950&q=80')"
+          }}
+        >
+          <div className="bg-black/60 rounded-xl px-6 py-16 text-center">
+            <h1 className="text-5xl font-extrabold text-white">Landscaping Products</h1>
+            <p className="text-lg text-gray-100 mt-4 max-w-3xl mx-auto">
+              Discover our full range of professional landscaping tools and materials.
+            </p>
+          </div>
+        </div>
 
         <div className="space-y-10">
           {categories.map((category, idx) => (

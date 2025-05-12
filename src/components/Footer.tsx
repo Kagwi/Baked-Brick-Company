@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
                 <Phone size={18} className="mr-2" />
                 <span>0722381743</span>
               </a>
-              <a href="mailto:info@bakedbrick.com" className="flex items-center hover:text-emerald-400 transition-colors">
+              <a href="mailto:support@bakedbrick.co.ke" className="flex items-center hover:text-emerald-400 transition-colors">
                 <Mail size={18} className="mr-2" />
                 <span>support@bakedbrick.co.ke</span>
               </a>
@@ -100,6 +100,16 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-stone-700 mt-8 pt-6 text-center">
           <p>&copy; {new Date().getFullYear()} Baked Brick Landscaping. All rights reserved.</p>
+          <p className="mt-2 text-sm">
+            <a
+              href="https://www.neosolcreatives.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-400 hover:text-emerald-600 transition-colors"
+            >
+              Powered by Neonsol Creatives
+            </a>
+          </p>
         </div>
       </div>
     </footer>

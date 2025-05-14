@@ -30,9 +30,7 @@ const Hero: React.FC<HeroProps> = ({
       className={`relative ${sizeClasses[size]} bg-cover bg-center`}
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      {overlay && (
-        <div className="absolute inset-0 bg-stone-900/50 lg:hidden"></div>
-      )}
+      {/* Overlay removed */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-serif">

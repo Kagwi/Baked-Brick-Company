@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
@@ -30,7 +30,7 @@ function App() {
 
       {/* Tagline and number */}
       <div style={{ backgroundColor: '#000', color: '#fff', textAlign: 'center', padding: '10px 0' }}>
-        <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Premier landscaping company</div>
+        <div style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Premier Landscaping Company</div>
         <div style={{ fontSize: '1.2rem', marginTop: '5px' }}>0722381743</div>
       </div>
 

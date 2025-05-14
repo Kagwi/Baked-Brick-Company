@@ -12,10 +12,9 @@ const Home: React.FC = () => {
   return (
     <div>
       {/* Hero Section */}
-      <Hero      
-        title="Premium Landscaping Company"
+      <Hero
+        title="Transform Your Outdoor Space"
         subtitle="Creating beautiful, sustainable landscapes that bring your vision to life"
-        subtitle="Call us on: 0722381743"
         backgroundImage="https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick10.webp"
         showButtons={true}
       />
@@ -116,12 +115,11 @@ const Home: React.FC = () => {
         className="py-24 bg-cover bg-center" 
         style={{ backgroundImage: 'url(https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Brick26.jpg?raw=true)' }}
       >
-        <div className="absolute inset-0 bg-emerald-900/70"></div>
         <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-serif font-bold text-white mb-6">
-             Ready to Transform Your Outdoor Space?
-          </h2>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-serif font-bold text-white mb-6">
+              Ready to Transform Your Outdoor Space?
+            </h2>
             <p className="text-green/90 text-lg mb-8">
               Contact us today to schedule a consultation and take the first step toward the landscape of your dreams.
             </p>

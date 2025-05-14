@@ -13,8 +13,9 @@ const Home: React.FC = () => {
     <div>
       {/* Hero Section */}
       <Hero
+        title="Premium Landscaping Company"
         title="Transform Your Outdoor Space"
-        subtitle="Creating beautiful, sustainable landscapes that bring your vision to life"
+        subtitle="Creating beautiful, sustainable landscapes that bring your vision to life by calling: 0722381743"
         backgroundImage="https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick10.webp"
         showButtons={true}
       />

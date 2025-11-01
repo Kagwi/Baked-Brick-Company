@@ -14,9 +14,9 @@ const Home: React.FC = () => {
   const heroImages = [
     "https://images.pexels.com/photos/145685/pexels-photo-145685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Beautiful lawn and garden landscape
     "https://images.pexels.com/photos/3076899/pexels-photo-3076899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Flower garden design
-    "https://github.com/Kagwi/Baked-Brick-Company/blob/main/Pebble%20Foot%20Spa.PNG?raw=true", // Professional landscaper at work
+    "https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20bunny-mellon-virginia-home-side-gardens-657382bf3fcae.avif", // Professional landscaper at work
     "https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Flower%20Garden.jpg?raw=true", // Garden landscape design
-    "https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Hardscape.jpeg"  // Stone pathway in garden
+    "https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked.PNG?raw=true"  // Stone pathway in garden
   ];
 
   useEffect(() => {
@@ -151,7 +151,7 @@ const Home: React.FC = () => {
             <div>
               <div className="relative group">
                 <img
-                  src="https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  src="https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked.PNG?raw=true"
                   alt="Professional landscaper designing garden landscape"
                   className="rounded-lg shadow-2xl w-full h-auto transform transition-transform duration-700 group-hover:scale-105"
                 />

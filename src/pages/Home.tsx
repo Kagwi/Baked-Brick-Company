@@ -14,7 +14,7 @@ const Home: React.FC = () => {
   const heroImages = [
     "https://images.pexels.com/photos/145685/pexels-photo-145685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Beautiful lawn and garden landscape
     "https://images.pexels.com/photos/3076899/pexels-photo-3076899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Flower garden design
-    "/Baked Backyard-garden-101254190_7WtppW9lKhq8k7xnMHlM2o-4efec71c35d943f199874deb3349219e.jpeg", // Professional landscaper at work
+    "https://github.com/Kagwi/Baked-Brick-Company/blob/main/Pebble%20Foot%20Spa.PNG?raw=true", // Professional landscaper at work
     "https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Flower%20Garden.jpg?raw=true", // Garden landscape design
     "https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Hardscape.jpeg"  // Stone pathway in garden
   ];

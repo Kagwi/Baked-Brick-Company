@@ -12,11 +12,11 @@ const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroImages = [
-    "https://images.pexels.com/photos/221047/pexels-photo-221047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Beautiful garden landscape
-    "https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Modern landscape design
-    "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Garden pathway
-    "https://images.pexels.com/photos/1771335/pexels-photo-1771335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Backyard landscaping
-    "https://images.pexels.com/photos/221012/pexels-photo-221012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"  // Professional landscaping
+    "https://www.pexels.com/photo/green-leafed-tree-beside-body-of-water-during-daytime-158063/", // Beautiful garden landscape
+    "https://www.pexels.com/photo/brown-and-beige-painted-house-surrounded-by-trees-and-grass-field-1212053/", // Modern landscape design
+    "https://www.pexels.com/photo/house-surrounded-by-green-grass-below-clouds-and-sky-226407/", // Garden pathway
+    "https://www.pexels.com/photo/brown-wooden-gazebo-near-green-grass-field-13871294/", // Backyard landscaping
+    "https://www.pexels.com/photo/gray-stone-pathway-207204/"  // Professional landscaping
   ];
 
   useEffect(() => {
@@ -151,7 +151,7 @@ const Home: React.FC = () => {
             <div>
               <div className="relative group">
                 <img
-                  src="https://images.pexels.com/photos/8985458/pexels-photo-8985458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  src="https://www.pexels.com/photo/white-concrete-building-near-garden-173229/"
                   alt="Professional landscaper designing outdoor space"
                   className="rounded-lg shadow-2xl w-full h-auto transform transition-transform duration-700 group-hover:scale-105"
                 />

@@ -12,11 +12,11 @@ const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroImages = [
-    "https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/221047/pexels-photo-221047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/145685/pexels-photo-145685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/1771335/pexels-photo-1771335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    "https://images.pexels.com/photos/221047/pexels-photo-221047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Beautiful garden landscape
+    "https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Modern landscape design
+    "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Garden pathway
+    "https://images.pexels.com/photos/1771335/pexels-photo-1771335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Backyard landscaping
+    "https://images.pexels.com/photos/221012/pexels-photo-221012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"  // Professional landscaping
   ];
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const Home: React.FC = () => {
           >
             <img
               src={image}
-              alt={`Landscaping ${index + 1}`}
+              alt={`Professional Landscaping ${index + 1}`}
               className="w-full h-full object-cover"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
@@ -152,7 +152,7 @@ const Home: React.FC = () => {
               <div className="relative group">
                 <img
                   src="https://images.pexels.com/photos/8985458/pexels-photo-8985458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                  alt="Professional landscaper at work"
+                  alt="Professional landscaper designing outdoor space"
                   className="rounded-lg shadow-2xl w-full h-auto transform transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-16 h-16 md:w-24 md:h-24 bg-emerald-500 rounded-full opacity-80 animate-pulse"></div>
@@ -599,7 +599,26 @@ const Home: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {projects.slice(0, 3).map((project, index) => (
+            {[
+              {
+                id: 1,
+                title: "Modern Garden Oasis",
+                category: "Residential Landscape",
+                image: "https://images.pexels.com/photos/221012/pexels-photo-221012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              },
+              {
+                id: 2,
+                title: "Commercial Plaza Greenery",
+                category: "Commercial Landscape",
+                image: "https://images.pexels.com/photos/3076899/pexels-photo-3076899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              },
+              {
+                id: 3,
+                title: "Sustainable Backyard",
+                category: "Eco-Friendly Design",
+                image: "https://images.pexels.com/photos/145685/pexels-photo-145685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              }
+            ].map((project, index) => (
               <div 
                 key={project.id} 
                 className="group relative overflow-hidden rounded-lg md:rounded-xl shadow-lg"
@@ -657,7 +676,7 @@ const Home: React.FC = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: 'url(https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'
+            backgroundImage: 'url(https://images.pexels.com/photos/221047/pexels-photo-221047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'
           }}
         >
           <div className="absolute inset-0 bg-stone-900/70"></div>

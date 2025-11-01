@@ -14,9 +14,9 @@ const Home: React.FC = () => {
   const heroImages = [
     "https://images.pexels.com/photos/145685/pexels-photo-145685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Beautiful lawn and garden landscape
     "https://images.pexels.com/photos/3076899/pexels-photo-3076899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Flower garden design
-    "https://images.pexels.com/photos/8985458/pexels-photo-8985458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Professional landscaper at work
-    "https://images.pexels.com/photos/221047/pexels-photo-221047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Garden landscape design
-    "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"  // Stone pathway in garden
+    "/Baked Backyard-garden-101254190_7WtppW9lKhq8k7xnMHlM2o-4efec71c35d943f199874deb3349219e.jpeg", // Professional landscaper at work
+    "https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Flower%20Garden.jpg?raw=true", // Garden landscape design
+    "https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Hardscape.jpeg"  // Stone pathway in garden
   ];
 
   useEffect(() => {

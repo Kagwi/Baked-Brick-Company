@@ -12,11 +12,11 @@ const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const heroImages = [
-    "https://www.pexels.com/photo/green-leafed-tree-beside-body-of-water-during-daytime-158063/", // Beautiful garden landscape
-    "https://www.pexels.com/photo/brown-and-beige-painted-house-surrounded-by-trees-and-grass-field-1212053/", // Modern landscape design
-    "https://www.pexels.com/photo/house-surrounded-by-green-grass-below-clouds-and-sky-226407/", // Garden pathway
-    "https://www.pexels.com/photo/brown-wooden-gazebo-near-green-grass-field-13871294/", // Backyard landscaping
-    "https://www.pexels.com/photo/gray-stone-pathway-207204/"  // Professional landscaping
+    "https://images.pexels.com/photos/145685/pexels-photo-145685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Beautiful lawn and garden landscape
+    "https://images.pexels.com/photos/3076899/pexels-photo-3076899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Flower garden design
+    "https://images.pexels.com/photos/8985458/pexels-photo-8985458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Professional landscaper at work
+    "https://images.pexels.com/photos/221047/pexels-photo-221047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Garden landscape design
+    "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"  // Stone pathway in garden
   ];
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const Home: React.FC = () => {
           >
             <img
               src={image}
-              alt={`Professional Landscaping ${index + 1}`}
+              alt={`Professional Landscaping Service ${index + 1}`}
               className="w-full h-full object-cover"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
@@ -56,10 +56,10 @@ const Home: React.FC = () => {
         <div className="relative z-10 flex items-center justify-center min-h-screen bg-black/40 px-4">
           <div className="text-center text-white w-full max-w-4xl mt-16 md:mt-0">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-4 md:mb-6 leading-tight">
-              Premium Landscaping Company
+              Premium Landscaping Services
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl mb-4 md:mb-8 leading-relaxed px-2">
-              Creating beautiful, sustainable landscapes that bring your vision to life
+              Transforming outdoor spaces with beautiful lawns, gardens, and hardscapes
             </p>
             <p className="text-base sm:text-lg mb-6 md:mb-8 font-semibold">
               Call us today: 0722381743
@@ -151,8 +151,8 @@ const Home: React.FC = () => {
             <div>
               <div className="relative group">
                 <img
-                  src="https://www.pexels.com/photo/white-concrete-building-near-garden-173229/"
-                  alt="Professional landscaper designing outdoor space"
+                  src="https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  alt="Professional landscaper designing garden landscape"
                   className="rounded-lg shadow-2xl w-full h-auto transform transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-16 h-16 md:w-24 md:h-24 bg-emerald-500 rounded-full opacity-80 animate-pulse"></div>
@@ -165,13 +165,13 @@ const Home: React.FC = () => {
               </h2>
               <div className="space-y-4 text-stone-600 mb-6 md:mb-8">
                 <p className="text-base md:text-lg leading-relaxed">
-                  Since 2010, we've been creating exceptional outdoor spaces that combine beauty, 
-                  functionality, and sustainability. Our team of experienced designers and craftsmen 
-                  work closely with each client to bring their vision to life.
+                  Since 2010, we've been creating exceptional outdoor spaces with lush lawns, 
+                  vibrant flower gardens, and beautiful hardscapes. Our team of experienced 
+                  designers and craftsmen work closely with each client to bring their outdoor vision to life.
                 </p>
                 <p className="text-base md:text-lg leading-relaxed">
-                  We pride ourselves on our attention to detail, quality materials, and environmentally 
-                  conscious practices. Every project is a unique masterpiece tailored to your lifestyle.
+                  We specialize in lawn care, garden design, irrigation systems, and hardscape 
+                  installation using quality materials and environmentally conscious practices.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4 mb-6 md:mb-8">
@@ -228,10 +228,9 @@ const Home: React.FC = () => {
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4">Our Services</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4">Our Landscaping Services</h2>
             <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg">
-              We offer a comprehensive range of landscaping services to transform your outdoor space 
-              into a beautiful, functional oasis.
+              Comprehensive landscaping services including lawn care, garden design, hardscaping, and maintenance
             </p>
           </div>
 
@@ -312,7 +311,7 @@ const Home: React.FC = () => {
               }}
             >
               <span className="inline-flex items-center px-3 py-1 md:px-4 md:py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold mb-3 md:mb-4">
-                🌟 Why We're Different
+                🌟 Why Choose Our Landscaping
               </span>
             </div>
             <h2 
@@ -329,39 +328,38 @@ const Home: React.FC = () => {
                 animation: 'fadeIn 0.8s ease-out 0.3s both'
               }}
             >
-              Discover what sets us apart in creating your perfect outdoor space. 
-              We combine expertise with passion to deliver exceptional results every time.
+              Professional landscaping services focused on lawns, gardens, hardscapes, and sustainable outdoor solutions
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               {
-                icon: "🌿",
-                title: "Eco-Friendly Solutions",
-                description: "Sustainable practices and native plants for an environmentally conscious landscape that thrives naturally.",
+                icon: "🌱",
+                title: "Lawn Care Experts",
+                description: "Professional lawn maintenance, seeding, sod installation, and turf management for lush green spaces.",
                 color: "from-emerald-500 to-green-500",
                 delay: 0
               },
               {
-                icon: "⚡",
-                title: "Fast & Reliable",
-                description: "Timely project completion without compromising on quality. We respect your time and deadlines.",
-                color: "from-amber-500 to-orange-500",
+                icon: "🌸",
+                title: "Garden Design",
+                description: "Beautiful flower beds, perennial gardens, and custom planting designs that bloom year-round.",
+                color: "from-pink-500 to-purple-500",
                 delay: 200
               },
               {
-                icon: "🎨",
-                title: "Creative Design",
-                description: "Unique, custom designs tailored to your vision and lifestyle. Your dream, our blueprint.",
-                color: "from-blue-500 to-cyan-500",
+                icon: "🪨",
+                title: "Hardscape Specialists",
+                description: "Patios, walkways, retaining walls, and stonework that complement your landscape design.",
+                color: "from-amber-500 to-orange-500",
                 delay: 400
               },
               {
-                icon: "🔧",
-                title: "Full Service",
-                description: "From design to maintenance, we handle every aspect of your project with expert care.",
-                color: "from-purple-500 to-pink-500",
+                icon: "💧",
+                title: "Irrigation & Drainage",
+                description: "Efficient watering systems and proper drainage solutions to keep your landscape healthy.",
+                color: "from-blue-500 to-cyan-500",
                 delay: 600
               }
             ].map((feature, index) => (
@@ -468,9 +466,9 @@ const Home: React.FC = () => {
           >
             {[
               { number: "14+", label: "Years Experience" },
-              { number: "500+", label: "Projects Completed" },
+              { number: "500+", label: "Lawns Transformed" },
               { number: "98%", label: "Client Satisfaction" },
-              { number: "24/7", label: "Support Available" }
+              { number: "24/7", label: "Maintenance Support" }
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div 
@@ -592,9 +590,9 @@ const Home: React.FC = () => {
       <section className="py-16 md:py-20 bg-stone-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4">Recent Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4">Our Landscaping Projects</h2>
             <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg">
-              Take a look at some of our recent landscaping transformations that brought dreams to life.
+              See how we've transformed ordinary yards into beautiful outdoor living spaces
             </p>
           </div>
 
@@ -602,21 +600,21 @@ const Home: React.FC = () => {
             {[
               {
                 id: 1,
-                title: "Modern Garden Oasis",
-                category: "Residential Landscape",
-                image: "https://images.pexels.com/photos/221012/pexels-photo-221012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                title: "Residential Lawn Makeover",
+                category: "Lawn Care & Maintenance",
+                image: "https://images.pexels.com/photos/145685/pexels-photo-145685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               },
               {
                 id: 2,
-                title: "Commercial Plaza Greenery",
-                category: "Commercial Landscape",
+                title: "Flower Garden Installation",
+                category: "Garden Design",
                 image: "https://images.pexels.com/photos/3076899/pexels-photo-3076899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               },
               {
                 id: 3,
-                title: "Sustainable Backyard",
-                category: "Eco-Friendly Design",
-                image: "https://images.pexels.com/photos/145685/pexels-photo-145685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                title: "Patio & Pathway Design",
+                category: "Hardscape Installation",
+                image: "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               }
             ].map((project, index) => (
               <div 
@@ -685,11 +683,11 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 md:mb-6">
-              Ready to Transform Your Outdoor Space?
+              Ready to Transform Your Lawn & Garden?
             </h2>
             <p className="text-white/90 text-lg md:text-xl mb-6 md:mb-8 leading-relaxed px-2">
-              Contact us today to schedule a consultation and take the first step toward 
-              the landscape of your dreams. Let's create something beautiful together.
+              Contact us today for professional lawn care, garden design, and hardscape installation. 
+              Let's create the beautiful outdoor space you've been dreaming of.
             </p>
             <NavLink to="/contact">
               <Button variant="secondary" size="large" className="animate-pulse w-full md:w-auto">
@@ -728,7 +726,7 @@ const Home: React.FC = () => {
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4">What Our Clients Say</h2>
             <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg">
-              We're proud of the relationships we build with our clients and the beautiful spaces we create together.
+              Hear from homeowners who transformed their outdoor spaces with our landscaping services
             </p>
           </div>
 

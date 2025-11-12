@@ -280,23 +280,23 @@ const Home: React.FC = () => {
         `}</style>
       </section>
 
-      {/* Why Choose Us Section - Enhanced with mobile fixes */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-emerald-50 to-lime-50 relative overflow-hidden">
+      {/* Why Choose Us Section - Updated with darker green background and two columns for mobile/tablet */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-emerald-900 via-green-900 to-emerald-800 relative overflow-hidden">
         {/* Background decorative elements - Adjusted for mobile */}
         <div 
-          className="absolute top-0 left-0 w-48 h-48 md:w-72 md:h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-0 left-0 w-48 h-48 md:w-72 md:h-72 bg-emerald-700 rounded-full mix-blend-multiply filter blur-xl opacity-30"
           style={{
             animation: 'blob 7s infinite'
           }}
         ></div>
         <div 
-          className="absolute top-0 right-0 w-48 h-48 md:w-72 md:h-72 bg-lime-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-0 right-0 w-48 h-48 md:w-72 md:h-72 bg-green-700 rounded-full mix-blend-multiply filter blur-xl opacity-30"
           style={{
             animation: 'blob 7s infinite 2s'
           }}
         ></div>
         <div 
-          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-48 h-48 md:w-72 md:h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-48 h-48 md:w-72 md:h-72 bg-emerald-600 rounded-full mix-blend-multiply filter blur-xl opacity-30"
           style={{
             animation: 'blob 7s infinite 4s'
           }}
@@ -310,20 +310,20 @@ const Home: React.FC = () => {
                 animation: 'slideInDown 0.6s ease-out'
               }}
             >
-              <span className="inline-flex items-center px-3 py-1 md:px-4 md:py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold mb-3 md:mb-4">
+              <span className="inline-flex items-center px-3 py-1 md:px-4 md:py-2 rounded-full bg-emerald-700 text-white text-sm font-semibold mb-3 md:mb-4">
                 🌟 Why Choose Our Landscaping
               </span>
             </div>
             <h2 
-              className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-stone-800 mb-4"
+              className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4"
               style={{
                 animation: 'slideInUp 0.6s ease-out'
               }}
             >
-              Why Choose <span className="text-emerald-600">Baked Brick</span>
+              Why Choose <span className="text-lime-300">Baked Brick</span>
             </h2>
             <p 
-              className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg"
+              className="text-white/90 max-w-3xl mx-auto text-base md:text-lg"
               style={{
                 animation: 'fadeIn 0.8s ease-out 0.3s both'
               }}
@@ -332,34 +332,35 @@ const Home: React.FC = () => {
             </p>
           </div>
 
+          {/* Updated grid for two columns on mobile and tablet */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               {
                 icon: "🌱",
                 title: "Lawn Care Experts",
                 description: "Professional lawn maintenance, seeding, sod installation, and turf management for lush green spaces.",
-                color: "from-emerald-500 to-green-500",
+                color: "from-emerald-400 to-green-400",
                 delay: 0
               },
               {
                 icon: "🌸",
                 title: "Garden Design",
                 description: "Beautiful flower beds, perennial gardens, and custom planting designs that bloom year-round.",
-                color: "from-pink-500 to-purple-500",
+                color: "from-pink-400 to-purple-400",
                 delay: 200
               },
               {
                 icon: "🪨",
                 title: "Hardscape Specialists",
                 description: "Patios, walkways, retaining walls, and stonework that complement your landscape design.",
-                color: "from-amber-500 to-orange-500",
+                color: "from-amber-400 to-orange-400",
                 delay: 400
               },
               {
                 icon: "💧",
                 title: "Irrigation & Drainage",
                 description: "Efficient watering systems and proper drainage solutions to keep your landscape healthy.",
-                color: "from-blue-500 to-cyan-500",
+                color: "from-blue-400 to-cyan-400",
                 delay: 600
               }
             ].map((feature, index) => (
@@ -371,18 +372,18 @@ const Home: React.FC = () => {
                 }}
               >
                 {/* Hover effect background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white to-stone-50 rounded-xl md:rounded-2xl shadow-lg transition-all duration-500 group-hover:shadow-xl md:group-hover:shadow-2xl group-hover:scale-105"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-800/80 to-green-800/80 rounded-xl md:rounded-2xl shadow-lg transition-all duration-500 group-hover:shadow-xl md:group-hover:shadow-2xl group-hover:scale-105"></div>
                 
                 {/* Animated border gradient */}
                 <div className={`absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r ${feature.color} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}>
-                  <div className="absolute inset-[2px] rounded-xl md:rounded-2xl bg-white"></div>
+                  <div className="absolute inset-[2px] rounded-xl md:rounded-2xl bg-emerald-900/90"></div>
                 </div>
 
                 <div className="relative p-6 md:p-8 h-full flex flex-col items-center text-center">
                   {/* Animated icon container */}
                   <div className="relative mb-4 md:mb-6">
-                    <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} rounded-full opacity-20 transition-opacity duration-500 group-hover:opacity-40`}></div>
-                    <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white rounded-full shadow-lg transition-transform duration-500 group-hover:scale-110">
+                    <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} rounded-full opacity-30 transition-opacity duration-500 group-hover:opacity-60`}></div>
+                    <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-emerald-800/80 rounded-full shadow-lg transition-transform duration-500 group-hover:scale-110">
                       <span className="text-2xl md:text-3xl transition-transform duration-500 group-hover:scale-110">
                         {feature.icon}
                       </span>
@@ -390,13 +391,13 @@ const Home: React.FC = () => {
                     
                     {/* Floating animation dots */}
                     <div 
-                      className="absolute -top-1 -right-1 md:-top-2 md:-right-2 w-3 h-3 md:w-4 md:h-4 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100"
+                      className="absolute -top-1 -right-1 md:-top-2 md:-right-2 w-3 h-3 md:w-4 md:h-4 bg-lime-400 rounded-full opacity-0 group-hover:opacity-100"
                       style={{
                         animation: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite'
                       }}
                     ></div>
                     <div 
-                      className="absolute -bottom-1 -left-1 md:-bottom-2 md:-left-2 w-2 h-2 md:w-3 md:h-3 bg-lime-400 rounded-full opacity-0 group-hover:opacity-100"
+                      className="absolute -bottom-1 -left-1 md:-bottom-2 md:-left-2 w-2 h-2 md:w-3 md:h-3 bg-emerald-300 rounded-full opacity-0 group-hover:opacity-100"
                       style={{
                         animation: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite 1s'
                       }}
@@ -404,19 +405,19 @@ const Home: React.FC = () => {
                   </div>
 
                   {/* Title with slide-in effect */}
-                  <h3 className="text-lg md:text-xl font-bold text-stone-800 mb-3 md:mb-4 transition-all duration-500 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-600 group-hover:to-green-600">
+                  <h3 className="text-white text-lg md:text-xl font-bold mb-3 md:mb-4 transition-all duration-500 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-lime-300 group-hover:to-emerald-300">
                     {feature.title}
                   </h3>
 
                   {/* Description with fade-in effect */}
-                  <p className="text-stone-600 text-sm md:text-base leading-relaxed flex-grow transition-colors duration-300 group-hover:text-stone-700">
+                  <p className="text-white/80 text-sm md:text-base leading-relaxed flex-grow transition-colors duration-300 group-hover:text-white">
                     {feature.description}
                   </p>
 
                   {/* Animated read more indicator */}
                   <div className="mt-4 md:mt-6 opacity-0 transition-all duration-500 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0">
-                    <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-r from-emerald-500 to-green-500 flex items-center justify-center">
-                      <svg className="w-3 h-3 md:w-4 md:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-r from-lime-400 to-emerald-400 flex items-center justify-center">
+                      <svg className="w-3 h-3 md:w-4 md:h-4 text-emerald-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7"></path>
                       </svg>
                     </div>
@@ -445,7 +446,7 @@ const Home: React.FC = () => {
                 </Button>
               </NavLink>
               <NavLink to="/contact" className="w-full sm:w-auto">
-                <Button variant="outline" size="large" className="w-full sm:w-auto group">
+                <Button variant="outline" size="large" className="w-full sm:w-auto group border-white text-white hover:bg-white hover:text-emerald-900">
                   <span className="flex items-center justify-center">
                     Get Free Estimate
                     <svg className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -472,14 +473,14 @@ const Home: React.FC = () => {
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div 
-                  className="text-2xl md:text-3xl lg:text-4xl font-bold text-emerald-600 mb-1 md:mb-2"
+                  className="text-2xl md:text-3xl lg:text-4xl font-bold text-lime-300 mb-1 md:mb-2"
                   style={{
                     animation: `countUp 1s ease-out ${index * 200}ms both`
                   }}
                 >
                   {stat.number}
                 </div>
-                <div className="text-stone-600 text-sm md:text-base font-medium">{stat.label}</div>
+                <div className="text-white/80 text-sm md:text-base font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -586,7 +587,7 @@ const Home: React.FC = () => {
         `}</style>
       </section>
 
-      {/* Projects Section */}
+      {/* Projects Section - Updated with 3 more projects and two columns for mobile/tablet */}
       <section className="py-16 md:py-20 bg-stone-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
@@ -596,7 +597,8 @@ const Home: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {/* Updated grid for two columns on mobile and tablet */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
                 id: 1,
@@ -615,6 +617,24 @@ const Home: React.FC = () => {
                 title: "Patio & Pathway Design",
                 category: "Hardscape Installation",
                 image: "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              },
+              {
+                id: 4,
+                title: "Modern Garden Landscape",
+                category: "Complete Garden Design",
+                image: "https://images.pexels.com/photos/221047/pexels-photo-221047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              },
+              {
+                id: 5,
+                title: "Outdoor Living Space",
+                category: "Patio & Entertainment Area",
+                image: "https://images.pexels.com/photos/2121121/pexels-photo-2121121.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              },
+              {
+                id: 6,
+                title: "Water Feature Installation",
+                category: "Ponds & Water Gardens",
+                image: "https://images.pexels.com/photos/258644/pexels-photo-258644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               }
             ].map((project, index) => (
               <div 
@@ -632,9 +652,6 @@ const Home: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-4 md:p-6">
                   <h3 className="text-white font-bold text-lg md:text-xl mb-1 md:mb-2">{project.title}</h3>
                   <p className="text-white/90 text-xs md:text-sm mb-3 md:mb-4">{project.category}</p>
-                  <Button variant="outline" size="small" className="border-white text-white hover:bg-white hover:text-stone-800 w-fit text-xs md:text-sm">
-                    View Project
-                  </Button>
                 </div>
               </div>
             ))}
@@ -669,12 +686,12 @@ const Home: React.FC = () => {
         `}</style>
       </section>
 
-      {/* Call to Action */}
+      {/* Call to Action - Updated with more landscaping-related photo */}
       <section className="relative py-16 md:py-24 bg-cover bg-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: 'url(https://images.pexels.com/photos/221047/pexels-photo-221047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'
+            backgroundImage: 'url(https://images.pexels.com/photos/1771335/pexels-photo-1771335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'
           }}
         >
           <div className="absolute inset-0 bg-stone-900/70"></div>

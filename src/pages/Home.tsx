@@ -10,7 +10,6 @@ import { projects } from '../data/projects';
 
 const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const heroImages = [
@@ -137,16 +136,16 @@ const Home: React.FC = () => {
               </div>
             </div>
             <div className="mt-8 md:mt-0 animate-slide-in-right">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4 md:mb-6">
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4 md:mb-6 title-entrance">
                 Welcome to Baked Brick Landscaping
               </h2>
               <div className="space-y-4 text-stone-600 mb-6 md:mb-8">
-                <p className="text-base md:text-lg leading-relaxed animate-text-reveal">
+                <p className="text-base md:text-lg leading-relaxed subtitle-entrance">
                   Since 2010, we've been creating exceptional outdoor spaces with lush lawns, 
                   vibrant flower gardens, and beautiful hardscapes. Our team of experienced 
                   designers and craftsmen work closely with each client to bring their outdoor vision to life.
                 </p>
-                <p className="text-base md:text-lg leading-relaxed animate-text-reveal animation-delay-300">
+                <p className="text-base md:text-lg leading-relaxed subtitle-entrance animation-delay-200">
                   We specialize in lawn care, garden design, irrigation systems, and hardscape 
                   installation using quality materials and environmentally conscious practices.
                 </p>
@@ -179,8 +178,8 @@ const Home: React.FC = () => {
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4 animate-fade-in-up">Our Landscaping Services</h2>
-            <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg animate-fade-in-up animation-delay-200">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4 title-entrance">Our Landscaping Services</h2>
+            <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg subtitle-entrance">
               Comprehensive landscaping services including lawn care, garden design, hardscaping, and maintenance
             </p>
           </div>
@@ -203,7 +202,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section - Updated with professional white and green theme */}
+      {/* Why Choose Us Section - Updated with consistent green/white theme and equal height tiles */}
       <section 
         ref={(el) => addToRefs(el, 2)}
         className="py-16 md:py-20 bg-gradient-to-br from-emerald-900 via-green-900 to-emerald-800 relative overflow-hidden section-entrance"
@@ -230,20 +229,20 @@ const Home: React.FC = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <div className="inline-block animate-fade-in-down">
-              <span className="inline-flex items-center px-3 py-1 md:px-4 md:py-2 rounded-full bg-white/20 text-white text-sm font-semibold mb-3 md:mb-4 backdrop-blur-sm">
+            <div className="inline-block">
+              <span className="inline-flex items-center px-3 py-1 md:px-4 md:py-2 rounded-full bg-white/20 text-white text-sm font-semibold mb-3 md:mb-4 backdrop-blur-sm subtitle-entrance">
                 🌟 Why Choose Our Landscaping
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 title-entrance">
               Why Choose <span className="text-lime-300">Baked Brick</span>
             </h2>
-            <p className="text-white/90 max-w-3xl mx-auto text-base md:text-lg animate-fade-in-up animation-delay-200">
+            <p className="text-white/90 max-w-3xl mx-auto text-base md:text-lg subtitle-entrance">
               Professional landscaping services focused on lawns, gardens, hardscapes, and sustainable outdoor solutions
             </p>
           </div>
 
-          {/* Updated grid with professional white and green theme */}
+          {/* Updated grid with consistent green/white theme and equal height */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               {
@@ -273,15 +272,15 @@ const Home: React.FC = () => {
             ].map((feature, index) => (
               <div 
                 key={index}
-                className="group relative animate-stagger-item"
+                className="group relative animate-stagger-item h-full flex"
                 style={{ animationDelay: `${feature.delay}ms` }}
               >
-                {/* Professional white card with green accents */}
-                <div className="relative bg-white rounded-xl md:rounded-2xl shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:scale-105 overflow-hidden">
+                {/* Professional white card with green accents - equal height */}
+                <div className="relative bg-white rounded-xl md:rounded-2xl shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:scale-105 overflow-hidden flex flex-col w-full">
                   {/* Green accent bar at top */}
                   <div className="h-2 bg-gradient-to-r from-emerald-500 to-green-500"></div>
                   
-                  <div className="p-6 md:p-8 h-full flex flex-col items-center text-center">
+                  <div className="p-6 md:p-8 flex flex-col items-center text-center flex-grow">
                     {/* Professional icon container */}
                     <div className="relative mb-6">
                       <div className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl shadow-md transition-all duration-500 group-hover:shadow-lg group-hover:scale-110 border border-emerald-100">
@@ -289,10 +288,6 @@ const Home: React.FC = () => {
                           {feature.icon}
                         </span>
                       </div>
-                      
-                      {/* Green accent dots */}
-                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-emerald-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-ping-slow"></div>
-                      <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-ping-slow animation-delay-1000"></div>
                     </div>
 
                     {/* Title with professional styling */}
@@ -300,24 +295,11 @@ const Home: React.FC = () => {
                       {feature.title}
                     </h3>
 
-                    {/* Description */}
-                    <p className="text-stone-600 text-base leading-relaxed flex-grow transition-colors duration-300 group-hover:text-stone-700">
+                    {/* Description - flex-grow for equal height */}
+                    <p className="text-stone-600 text-base leading-relaxed flex-grow">
                       {feature.description}
                     </p>
-
-                    {/* Professional hover indicator */}
-                    <div className="mt-6 opacity-0 transition-all duration-500 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0">
-                      <div className="flex items-center justify-center space-x-2 text-emerald-600 font-semibold text-sm">
-                        <span>Learn More</span>
-                        <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                      </div>
-                    </div>
                   </div>
-
-                  {/* Subtle green glow on hover */}
-                  <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r from-emerald-400/0 via-green-400/0 to-emerald-400/0 group-hover:from-emerald-400/5 group-hover:via-green-400/5 group-hover:to-emerald-400/5 transition-all duration-500 pointer-events-none"></div>
                 </div>
               </div>
             ))}
@@ -368,15 +350,15 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Projects Section with Accurate Landscaping Images */}
       <section 
         ref={(el) => addToRefs(el, 3)}
         className="py-16 md:py-20 bg-stone-50 section-entrance"
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4 animate-fade-in-up">Our Landscaping Projects</h2>
-            <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg animate-fade-in-up animation-delay-200">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4 title-entrance">Our Landscaping Projects</h2>
+            <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg subtitle-entrance">
               See how we've transformed ordinary yards into beautiful outdoor living spaces
             </p>
           </div>
@@ -385,39 +367,39 @@ const Home: React.FC = () => {
             {[
               {
                 id: 1,
-                title: "Residential Lawn Makeover",
+                title: "Residential Lawn Transformation",
                 category: "Lawn Care & Maintenance",
-                image: "https://images.pexels.com/photos/145685/pexels-photo-145685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                image: "https://images.pexels.com/photos/2121197/pexels-photo-2121197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               },
               {
                 id: 2,
                 title: "Flower Garden Installation",
                 category: "Garden Design",
-                image: "https://images.pexels.com/photos/3076899/pexels-photo-3076899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                image: "https://images.pexels.com/photos/2132227/pexels-photo-2132227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               },
               {
                 id: 3,
-                title: "Patio & Pathway Design",
+                title: "Stone Patio & Pathway",
                 category: "Hardscape Installation",
-                image: "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                image: "https://images.pexels.com/photos/221047/pexels-photo-221047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               },
               {
                 id: 4,
                 title: "Modern Garden Landscape",
                 category: "Complete Garden Design",
-                image: "https://images.pexels.com/photos/221047/pexels-photo-221047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                image: "https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               },
               {
                 id: 5,
-                title: "Outdoor Living Space",
-                category: "Patio & Entertainment Area",
-                image: "https://images.pexels.com/photos/2121121/pexels-photo-2121121.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                title: "Outdoor Entertainment Area",
+                category: "Patio & Deck Design",
+                image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               },
               {
                 id: 6,
-                title: "Water Feature Installation",
+                title: "Garden Water Feature",
                 category: "Ponds & Water Gardens",
-                image: "https://images.pexels.com/photos/258644/pexels-photo-258644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                image: "https://images.pexels.com/photos/2583855/pexels-photo-2583855.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               }
             ].map((project, index) => (
               <div 
@@ -464,10 +446,10 @@ const Home: React.FC = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 md:mb-6 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 md:mb-6 title-entrance">
               Ready to Transform Your Lawn & Garden?
             </h2>
-            <p className="text-white/90 text-lg md:text-xl mb-6 md:mb-8 leading-relaxed px-2 animate-fade-in-up animation-delay-200">
+            <p className="text-white/90 text-lg md:text-xl mb-6 md:mb-8 leading-relaxed px-2 subtitle-entrance">
               Contact us today for professional lawn care, garden design, and hardscape installation. 
               Let's create the beautiful outdoor space you've been dreaming of.
             </p>
@@ -487,8 +469,8 @@ const Home: React.FC = () => {
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4 animate-fade-in-up">What Our Clients Say</h2>
-            <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg animate-fade-in-up animation-delay-200">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4 title-entrance">What Our Clients Say</h2>
+            <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg subtitle-entrance">
               Hear from homeowners who transformed their outdoor spaces with our landscaping services
             </p>
           </div>
@@ -601,14 +583,25 @@ const Home: React.FC = () => {
           }
         }
 
-        @keyframes ping-slow {
-          0% {
-            transform: scale(1);
-            opacity: 1;
-          }
-          75%, 100% {
-            transform: scale(2);
+        @keyframes slideDown {
+          from {
             opacity: 0;
+            transform: translateY(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
           }
         }
 
@@ -649,10 +642,6 @@ const Home: React.FC = () => {
           animation: fadeInUp 0.8s ease-out both;
         }
 
-        .animate-ping-slow {
-          animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-        }
-
         .animation-delay-200 {
           animation-delay: 200ms;
         }
@@ -687,6 +676,42 @@ const Home: React.FC = () => {
         .section-entrance.animate-in {
           opacity: 1;
           transform: translateY(0);
+        }
+
+        /* Title and subtitle specific animations */
+        .title-entrance {
+          opacity: 0;
+          transform: translateY(-50px);
+          transition: all 0.8s ease-out;
+        }
+
+        .subtitle-entrance {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: all 0.8s ease-out;
+        }
+
+        .section-entrance.animate-in .title-entrance {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .section-entrance.animate-in .subtitle-entrance {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Stagger animations for titles and subtitles */
+        .section-entrance.animate-in .title-entrance {
+          transition-delay: 200ms;
+        }
+
+        .section-entrance.animate-in .subtitle-entrance {
+          transition-delay: 400ms;
+        }
+
+        .section-entrance.animate-in .subtitle-entrance.animation-delay-200 {
+          transition-delay: 600ms;
         }
 
         /* Mobile-specific adjustments */

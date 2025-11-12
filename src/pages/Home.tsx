@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
@@ -10,13 +10,15 @@ import { projects } from '../data/projects';
 
 const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const heroImages = [
-    "https://images.pexels.com/photos/145685/pexels-photo-145685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Beautiful lawn and garden landscape
-    "https://images.pexels.com/photos/3076899/pexels-photo-3076899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Flower garden design
-    "https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20bunny-mellon-virginia-home-side-gardens-657382bf3fcae.avif", // Professional landscaper at work
-    "https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Flower%20Garden.jpg?raw=true", // Garden landscape design
-    "https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked.PNG?raw=true"  // Stone pathway in garden
+    "https://images.pexels.com/photos/145685/pexels-photo-145685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://images.pexels.com/photos/3076899/pexels-photo-3076899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20bunny-mellon-virginia-home-side-gardens-657382bf3fcae.avif",
+    "https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked%20Flower%20Garden.jpg?raw=true",
+    "https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked.PNG?raw=true"
   ];
 
   useEffect(() => {
@@ -26,9 +28,32 @@ const Home: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '-50px' }
+    );
+
+    sectionRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const addToRefs = (el: HTMLDivElement | null, index: number) => {
+    sectionRefs.current[index] = el;
+  };
+
   return (
-    <div>
-      {/* Hero Section with Carousel - Fixed for mobile */}
+    <div className="overflow-x-hidden">
+      {/* Hero Section with Carousel */}
       <section className="relative min-h-screen overflow-hidden pt-16 md:pt-0">
         {/* Animated Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-green-800 to-lime-900 animate-pulse"></div>
@@ -52,19 +77,19 @@ const Home: React.FC = () => {
           </div>
         ))}
         
-        {/* Hero Content - Improved spacing for mobile */}
+        {/* Hero Content */}
         <div className="relative z-10 flex items-center justify-center min-h-screen bg-black/40 px-4">
           <div className="text-center text-white w-full max-w-4xl mt-16 md:mt-0">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-4 md:mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-4 md:mb-6 leading-tight animate-fade-in-up">
               Premium Landscaping Services
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl mb-4 md:mb-8 leading-relaxed px-2">
+            <p className="text-lg sm:text-xl md:text-2xl mb-4 md:mb-8 leading-relaxed px-2 animate-fade-in-up animation-delay-200">
               Transforming outdoor spaces with beautiful lawns, gardens, and hardscapes
             </p>
-            <p className="text-base sm:text-lg mb-6 md:mb-8 font-semibold">
+            <p className="text-base sm:text-lg mb-6 md:mb-8 font-semibold animate-fade-in-up animation-delay-400">
               Call us today: 0722381743
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animation-delay-600">
               <NavLink to="/contact" className="w-full sm:w-auto">
                 <Button variant="secondary" size="large" className="w-full sm:w-auto">
                   Get Free Consultation
@@ -79,7 +104,7 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* Carousel Indicators - Adjusted position for mobile */}
+        {/* Carousel Indicators */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
           {heroImages.map((_, index) => (
             <button
@@ -91,64 +116,16 @@ const Home: React.FC = () => {
             />
           ))}
         </div>
-
-        <style jsx>{`
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          h1 {
-            animation: fadeInUp 0.8s ease-out;
-          }
-          h1 + p {
-            animation: fadeInUp 0.8s ease-out 0.3s both;
-          }
-          h1 + p + p {
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-          }
-          h1 + p + p + div {
-            animation: fadeInUp 0.8s ease-out 0.9s both;
-          }
-
-          /* Mobile-specific adjustments */
-          @media (max-width: 640px) {
-            .relative.min-h-screen {
-              padding-top: 4rem; /* Additional padding for mobile */
-            }
-            .text-center h1 {
-              font-size: 2.5rem;
-              margin-bottom: 1rem;
-            }
-            .text-center p {
-              font-size: 1.125rem;
-              margin-bottom: 1rem;
-              padding: 0 0.5rem;
-            }
-          }
-
-          @media (max-width: 480px) {
-            .text-center h1 {
-              font-size: 2rem;
-              line-height: 1.2;
-            }
-            .text-center p {
-              font-size: 1rem;
-            }
-          }
-        `}</style>
       </section>
 
       {/* About Section */}
-      <section className="py-16 md:py-20 bg-stone-50 overflow-hidden">
+      <section 
+        ref={(el) => addToRefs(el, 0)}
+        className="py-16 md:py-20 bg-stone-50 overflow-hidden section-entrance"
+      >
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div>
+            <div className="animate-slide-in-left">
               <div className="relative group">
                 <img
                   src="https://github.com/Kagwi/Baked-Brick-Company/blob/main/Baked.PNG?raw=true"
@@ -159,33 +136,33 @@ const Home: React.FC = () => {
                 <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-12 h-12 md:w-16 md:h-16 bg-lime-400 rounded-full opacity-60 animate-bounce"></div>
               </div>
             </div>
-            <div className="mt-8 md:mt-0">
+            <div className="mt-8 md:mt-0 animate-slide-in-right">
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4 md:mb-6">
                 Welcome to Baked Brick Landscaping
               </h2>
               <div className="space-y-4 text-stone-600 mb-6 md:mb-8">
-                <p className="text-base md:text-lg leading-relaxed">
+                <p className="text-base md:text-lg leading-relaxed animate-text-reveal">
                   Since 2010, we've been creating exceptional outdoor spaces with lush lawns, 
                   vibrant flower gardens, and beautiful hardscapes. Our team of experienced 
                   designers and craftsmen work closely with each client to bring their outdoor vision to life.
                 </p>
-                <p className="text-base md:text-lg leading-relaxed">
+                <p className="text-base md:text-lg leading-relaxed animate-text-reveal animation-delay-300">
                   We specialize in lawn care, garden design, irrigation systems, and hardscape 
                   installation using quality materials and environmentally conscious practices.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4 mb-6 md:mb-8">
-                <div className="text-center p-3 md:p-4 bg-white rounded-lg shadow-md">
+                <div className="text-center p-3 md:p-4 bg-white rounded-lg shadow-md animate-scale-in animation-delay-400">
                   <div className="text-xl md:text-2xl font-bold text-emerald-600">14+</div>
                   <div className="text-sm md:text-base text-stone-600">Years Experience</div>
                 </div>
-                <div className="text-center p-3 md:p-4 bg-white rounded-lg shadow-md">
+                <div className="text-center p-3 md:p-4 bg-white rounded-lg shadow-md animate-scale-in animation-delay-600">
                   <div className="text-xl md:text-2xl font-bold text-emerald-600">500+</div>
                   <div className="text-sm md:text-base text-stone-600">Projects Completed</div>
                 </div>
               </div>
               <NavLink to="/about">
-                <Button variant="outline" className="group w-full md:w-auto">
+                <Button variant="outline" className="group w-full md:w-auto animate-fade-in-up animation-delay-800">
                   Learn More About Us
                   <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </Button>
@@ -193,56 +170,30 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-
-        <style jsx>{`
-          @keyframes slideInLeft {
-            from {
-              opacity: 0;
-              transform: translateX(-50px);
-            }
-            to {
-              opacity: 1;
-              transform: translateX(0);
-            }
-          }
-          @keyframes slideInRight {
-            from {
-              opacity: 0;
-              transform: translateX(50px);
-            }
-            to {
-              opacity: 1;
-              transform: translateX(0);
-            }
-          }
-          .grid > div:first-child {
-            animation: slideInLeft 0.8s ease-out;
-          }
-          .grid > div:last-child {
-            animation: slideInRight 0.8s ease-out;
-          }
-        `}</style>
       </section>
 
       {/* Services Section */}
-      <section className="py-16 md:py-20 bg-white">
+      <section 
+        ref={(el) => addToRefs(el, 1)}
+        className="py-16 md:py-20 bg-white section-entrance"
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4">Our Landscaping Services</h2>
-            <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4 animate-fade-in-up">Our Landscaping Services</h2>
+            <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg animate-fade-in-up animation-delay-200">
               Comprehensive landscaping services including lawn care, garden design, hardscaping, and maintenance
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.slice(0, 3).map((service, index) => (
-              <div key={service.id}>
+              <div key={service.id} className="animate-stagger-item" style={{ animationDelay: `${index * 200}ms` }}>
                 <ServiceCard service={service} />
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-12 md:mt-16">
+          <div className="text-center mt-12 md:mt-16 animate-fade-in-up animation-delay-600">
             <NavLink to="/services">
               <Button variant="primary" size="large" className="w-full md:w-auto">
                 View All Services
@@ -250,39 +201,14 @@ const Home: React.FC = () => {
             </NavLink>
           </div>
         </div>
-
-        <style jsx>{`
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          .text-center {
-            animation: fadeInUp 0.8s ease-out;
-          }
-          .grid > div:nth-child(1) {
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-          }
-          .grid > div:nth-child(2) {
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-          }
-          .grid > div:nth-child(3) {
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-          }
-          .text-center.mt-12, .text-center.mt-16 {
-            animation: fadeInUp 0.8s ease-out 0.8s both;
-          }
-        `}</style>
       </section>
 
-      {/* Why Choose Us Section - Updated with darker green background and two columns for mobile/tablet */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-emerald-900 via-green-900 to-emerald-800 relative overflow-hidden">
-        {/* Background decorative elements - Adjusted for mobile */}
+      {/* Why Choose Us Section - Updated with professional white and green theme */}
+      <section 
+        ref={(el) => addToRefs(el, 2)}
+        className="py-16 md:py-20 bg-gradient-to-br from-emerald-900 via-green-900 to-emerald-800 relative overflow-hidden section-entrance"
+      >
+        {/* Background decorative elements */}
         <div 
           className="absolute top-0 left-0 w-48 h-48 md:w-72 md:h-72 bg-emerald-700 rounded-full mix-blend-multiply filter blur-xl opacity-30"
           style={{
@@ -304,136 +230,101 @@ const Home: React.FC = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <div 
-              className="inline-block"
-              style={{
-                animation: 'slideInDown 0.6s ease-out'
-              }}
-            >
-              <span className="inline-flex items-center px-3 py-1 md:px-4 md:py-2 rounded-full bg-emerald-700 text-white text-sm font-semibold mb-3 md:mb-4">
+            <div className="inline-block animate-fade-in-down">
+              <span className="inline-flex items-center px-3 py-1 md:px-4 md:py-2 rounded-full bg-white/20 text-white text-sm font-semibold mb-3 md:mb-4 backdrop-blur-sm">
                 🌟 Why Choose Our Landscaping
               </span>
             </div>
-            <h2 
-              className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4"
-              style={{
-                animation: 'slideInUp 0.6s ease-out'
-              }}
-            >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4 animate-fade-in-up">
               Why Choose <span className="text-lime-300">Baked Brick</span>
             </h2>
-            <p 
-              className="text-white/90 max-w-3xl mx-auto text-base md:text-lg"
-              style={{
-                animation: 'fadeIn 0.8s ease-out 0.3s both'
-              }}
-            >
+            <p className="text-white/90 max-w-3xl mx-auto text-base md:text-lg animate-fade-in-up animation-delay-200">
               Professional landscaping services focused on lawns, gardens, hardscapes, and sustainable outdoor solutions
             </p>
           </div>
 
-          {/* Updated grid for two columns on mobile and tablet */}
+          {/* Updated grid with professional white and green theme */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               {
                 icon: "🌱",
                 title: "Lawn Care Experts",
                 description: "Professional lawn maintenance, seeding, sod installation, and turf management for lush green spaces.",
-                color: "from-emerald-400 to-green-400",
                 delay: 0
               },
               {
                 icon: "🌸",
                 title: "Garden Design",
                 description: "Beautiful flower beds, perennial gardens, and custom planting designs that bloom year-round.",
-                color: "from-pink-400 to-purple-400",
                 delay: 200
               },
               {
                 icon: "🪨",
                 title: "Hardscape Specialists",
                 description: "Patios, walkways, retaining walls, and stonework that complement your landscape design.",
-                color: "from-amber-400 to-orange-400",
                 delay: 400
               },
               {
                 icon: "💧",
                 title: "Irrigation & Drainage",
                 description: "Efficient watering systems and proper drainage solutions to keep your landscape healthy.",
-                color: "from-blue-400 to-cyan-400",
                 delay: 600
               }
             ].map((feature, index) => (
               <div 
                 key={index}
-                className="group relative"
-                style={{
-                  animation: `fadeInUp 0.8s ease-out ${feature.delay}ms both`
-                }}
+                className="group relative animate-stagger-item"
+                style={{ animationDelay: `${feature.delay}ms` }}
               >
-                {/* Hover effect background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-800/80 to-green-800/80 rounded-xl md:rounded-2xl shadow-lg transition-all duration-500 group-hover:shadow-xl md:group-hover:shadow-2xl group-hover:scale-105"></div>
-                
-                {/* Animated border gradient */}
-                <div className={`absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r ${feature.color} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}>
-                  <div className="absolute inset-[2px] rounded-xl md:rounded-2xl bg-emerald-900/90"></div>
-                </div>
-
-                <div className="relative p-6 md:p-8 h-full flex flex-col items-center text-center">
-                  {/* Animated icon container */}
-                  <div className="relative mb-4 md:mb-6">
-                    <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} rounded-full opacity-30 transition-opacity duration-500 group-hover:opacity-60`}></div>
-                    <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-emerald-800/80 rounded-full shadow-lg transition-transform duration-500 group-hover:scale-110">
-                      <span className="text-2xl md:text-3xl transition-transform duration-500 group-hover:scale-110">
-                        {feature.icon}
-                      </span>
+                {/* Professional white card with green accents */}
+                <div className="relative bg-white rounded-xl md:rounded-2xl shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:scale-105 overflow-hidden">
+                  {/* Green accent bar at top */}
+                  <div className="h-2 bg-gradient-to-r from-emerald-500 to-green-500"></div>
+                  
+                  <div className="p-6 md:p-8 h-full flex flex-col items-center text-center">
+                    {/* Professional icon container */}
+                    <div className="relative mb-6">
+                      <div className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl shadow-md transition-all duration-500 group-hover:shadow-lg group-hover:scale-110 border border-emerald-100">
+                        <span className="text-3xl md:text-4xl transition-transform duration-500 group-hover:scale-110">
+                          {feature.icon}
+                        </span>
+                      </div>
+                      
+                      {/* Green accent dots */}
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-emerald-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-ping-slow"></div>
+                      <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-ping-slow animation-delay-1000"></div>
                     </div>
-                    
-                    {/* Floating animation dots */}
-                    <div 
-                      className="absolute -top-1 -right-1 md:-top-2 md:-right-2 w-3 h-3 md:w-4 md:h-4 bg-lime-400 rounded-full opacity-0 group-hover:opacity-100"
-                      style={{
-                        animation: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite'
-                      }}
-                    ></div>
-                    <div 
-                      className="absolute -bottom-1 -left-1 md:-bottom-2 md:-left-2 w-2 h-2 md:w-3 md:h-3 bg-emerald-300 rounded-full opacity-0 group-hover:opacity-100"
-                      style={{
-                        animation: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite 1s'
-                      }}
-                    ></div>
-                  </div>
 
-                  {/* Title with slide-in effect */}
-                  <h3 className="text-white text-lg md:text-xl font-bold mb-3 md:mb-4 transition-all duration-500 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-lime-300 group-hover:to-emerald-300">
-                    {feature.title}
-                  </h3>
+                    {/* Title with professional styling */}
+                    <h3 className="text-xl md:text-2xl font-bold text-stone-800 mb-4 transition-all duration-500 group-hover:text-emerald-700">
+                      {feature.title}
+                    </h3>
 
-                  {/* Description with fade-in effect */}
-                  <p className="text-white/80 text-sm md:text-base leading-relaxed flex-grow transition-colors duration-300 group-hover:text-white">
-                    {feature.description}
-                  </p>
+                    {/* Description */}
+                    <p className="text-stone-600 text-base leading-relaxed flex-grow transition-colors duration-300 group-hover:text-stone-700">
+                      {feature.description}
+                    </p>
 
-                  {/* Animated read more indicator */}
-                  <div className="mt-4 md:mt-6 opacity-0 transition-all duration-500 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0">
-                    <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-r from-lime-400 to-emerald-400 flex items-center justify-center">
-                      <svg className="w-3 h-3 md:w-4 md:h-4 text-emerald-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7"></path>
-                      </svg>
+                    {/* Professional hover indicator */}
+                    <div className="mt-6 opacity-0 transition-all duration-500 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0">
+                      <div className="flex items-center justify-center space-x-2 text-emerald-600 font-semibold text-sm">
+                        <span>Learn More</span>
+                        <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                      </div>
                     </div>
                   </div>
+
+                  {/* Subtle green glow on hover */}
+                  <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-r from-emerald-400/0 via-green-400/0 to-emerald-400/0 group-hover:from-emerald-400/5 group-hover:via-green-400/5 group-hover:to-emerald-400/5 transition-all duration-500 pointer-events-none"></div>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Bottom CTA */}
-          <div 
-            className="text-center mt-12 md:mt-16"
-            style={{
-              animation: 'fadeInUp 0.8s ease-out 800ms both'
-            }}
-          >
+          <div className="text-center mt-12 md:mt-16 animate-fade-in-up animation-delay-800">
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <NavLink to="/about" className="w-full sm:w-auto">
                 <Button variant="primary" size="large" className="w-full sm:w-auto group">
@@ -459,12 +350,7 @@ const Home: React.FC = () => {
           </div>
 
           {/* Stats counter */}
-          <div 
-            className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"
-            style={{
-              animation: 'fadeInUp 0.8s ease-out 1000ms both'
-            }}
-          >
+          <div className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 animate-fade-in-up animation-delay-1000">
             {[
               { number: "14+", label: "Years Experience" },
               { number: "500+", label: "Lawns Transformed" },
@@ -472,12 +358,7 @@ const Home: React.FC = () => {
               { number: "24/7", label: "Maintenance Support" }
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div 
-                  className="text-2xl md:text-3xl lg:text-4xl font-bold text-lime-300 mb-1 md:mb-2"
-                  style={{
-                    animation: `countUp 1s ease-out ${index * 200}ms both`
-                  }}
-                >
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-lime-300 mb-1 md:mb-2 animate-count-up">
                   {stat.number}
                 </div>
                 <div className="text-white/80 text-sm md:text-base font-medium">{stat.label}</div>
@@ -485,119 +366,21 @@ const Home: React.FC = () => {
             ))}
           </div>
         </div>
-
-        {/* Embedded CSS Styles */}
-        <style jsx>{`
-          @keyframes blob {
-            0% {
-              transform: translate(0px, 0px) scale(1);
-            }
-            33% {
-              transform: translate(20px, -30px) scale(1.1);
-            }
-            66% {
-              transform: translate(-15px, 15px) scale(0.9);
-            }
-            100% {
-              transform: translate(0px, 0px) scale(1);
-            }
-          }
-
-          @keyframes slideInDown {
-            from {
-              opacity: 0;
-              transform: translateY(-30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          @keyframes slideInUp {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-            }
-            to {
-              opacity: 1;
-            }
-          }
-
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          @keyframes countUp {
-            from {
-              opacity: 0;
-              transform: translateY(20px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          @keyframes ping {
-            0% {
-              transform: scale(1);
-              opacity: 1;
-            }
-            75%, 100% {
-              transform: scale(2);
-              opacity: 0;
-            }
-          }
-
-          /* Mobile-specific adjustments */
-          @media (max-width: 640px) {
-            @keyframes blob {
-              0% {
-                transform: translate(0px, 0px) scale(1);
-              }
-              33% {
-                transform: translate(10px, -15px) scale(1.1);
-              }
-              66% {
-                transform: translate(-8px, 8px) scale(0.9);
-              }
-              100% {
-                transform: translate(0px, 0px) scale(1);
-              }
-            }
-          }
-        `}</style>
       </section>
 
-      {/* Projects Section - Updated with 3 more projects and two columns for mobile/tablet */}
-      <section className="py-16 md:py-20 bg-stone-50">
+      {/* Projects Section */}
+      <section 
+        ref={(el) => addToRefs(el, 3)}
+        className="py-16 md:py-20 bg-stone-50 section-entrance"
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4">Our Landscaping Projects</h2>
-            <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4 animate-fade-in-up">Our Landscaping Projects</h2>
+            <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg animate-fade-in-up animation-delay-200">
               See how we've transformed ordinary yards into beautiful outdoor living spaces
             </p>
           </div>
 
-          {/* Updated grid for two columns on mobile and tablet */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
@@ -639,10 +422,8 @@ const Home: React.FC = () => {
             ].map((project, index) => (
               <div 
                 key={project.id} 
-                className="group relative overflow-hidden rounded-lg md:rounded-xl shadow-lg"
-                style={{
-                  animation: `fadeInUp 0.8s ease-out ${index * 200}ms both`
-                }}
+                className="group relative overflow-hidden rounded-lg md:rounded-xl shadow-lg animate-stagger-item"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <img
                   src={project.image}
@@ -650,14 +431,14 @@ const Home: React.FC = () => {
                   className="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-4 md:p-6">
-                  <h3 className="text-white font-bold text-lg md:text-xl mb-1 md:mb-2">{project.title}</h3>
-                  <p className="text-white/90 text-xs md:text-sm mb-3 md:mb-4">{project.category}</p>
+                  <h3 className="text-white font-bold text-lg md:text-xl mb-1 md:mb-2 animate-slide-in-up">{project.title}</h3>
+                  <p className="text-white/90 text-xs md:text-sm mb-3 md:mb-4 animate-slide-in-up animation-delay-100">{project.category}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-12 md:mt-16">
+          <div className="text-center mt-12 md:mt-16 animate-fade-in-up animation-delay-600">
             <NavLink to="/projects">
               <Button variant="primary" size="large" className="w-full md:w-auto">
                 View More Projects
@@ -665,29 +446,13 @@ const Home: React.FC = () => {
             </NavLink>
           </div>
         </div>
-
-        <style jsx>{`
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          .text-center.mb-12, .text-center.mb-16 {
-            animation: fadeInUp 0.8s ease-out;
-          }
-          .text-center.mt-12, .text-center.mt-16 {
-            animation: fadeInUp 0.8s ease-out 0.8s both;
-          }
-        `}</style>
       </section>
 
-      {/* Call to Action - Updated with more landscaping-related photo */}
-      <section className="relative py-16 md:py-24 bg-cover bg-center overflow-hidden">
+      {/* Call to Action */}
+      <section 
+        ref={(el) => addToRefs(el, 4)}
+        className="relative py-16 md:py-24 bg-cover bg-center overflow-hidden section-entrance"
+      >
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
@@ -699,50 +464,31 @@ const Home: React.FC = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 md:mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 md:mb-6 animate-fade-in-up">
               Ready to Transform Your Lawn & Garden?
             </h2>
-            <p className="text-white/90 text-lg md:text-xl mb-6 md:mb-8 leading-relaxed px-2">
+            <p className="text-white/90 text-lg md:text-xl mb-6 md:mb-8 leading-relaxed px-2 animate-fade-in-up animation-delay-200">
               Contact us today for professional lawn care, garden design, and hardscape installation. 
               Let's create the beautiful outdoor space you've been dreaming of.
             </p>
-            <NavLink to="/contact">
+            <NavLink to="/contact" className="animate-fade-in-up animation-delay-400">
               <Button variant="secondary" size="large" className="animate-pulse w-full md:w-auto">
                 Get A Free Consultation
               </Button>
             </NavLink>
           </div>
         </div>
-
-        <style jsx>{`
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          .text-center > h2 {
-            animation: fadeInUp 0.8s ease-out;
-          }
-          .text-center > p {
-            animation: fadeInUp 0.8s ease-out 0.3s both;
-          }
-          .text-center > a {
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-          }
-        `}</style>
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 md:py-20 bg-white">
+      <section 
+        ref={(el) => addToRefs(el, 5)}
+        className="py-16 md:py-20 bg-white section-entrance"
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4">What Our Clients Say</h2>
-            <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4 animate-fade-in-up">What Our Clients Say</h2>
+            <p className="text-stone-600 max-w-3xl mx-auto text-base md:text-lg animate-fade-in-up animation-delay-200">
               Hear from homeowners who transformed their outdoor spaces with our landscaping services
             </p>
           </div>
@@ -751,32 +497,216 @@ const Home: React.FC = () => {
             {testimonials.slice(0, 2).map((testimonial, index) => (
               <div 
                 key={testimonial.id}
-                style={{
-                  animation: `fadeInUp 0.8s ease-out ${index * 200}ms both`
-                }}
+                className="animate-stagger-item"
+                style={{ animationDelay: `${index * 200}ms` }}
               >
                 <TestimonialCard testimonial={testimonial} />
               </div>
             ))}
           </div>
         </div>
-
-        <style jsx>{`
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          .text-center.mb-12, .text-center.mb-16 {
-            animation: fadeInUp 0.8s ease-out;
-          }
-        `}</style>
       </section>
+
+      {/* Global Animation Styles */}
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInDown {
+          from {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes scaleIn {
+          from {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        @keyframes textReveal {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes countUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.5);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        @keyframes blob {
+          0% {
+            transform: translate(0px, 0px) scale(1);
+          }
+          33% {
+            transform: translate(20px, -30px) scale(1.1);
+          }
+          66% {
+            transform: translate(-15px, 15px) scale(0.9);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1);
+          }
+        }
+
+        @keyframes ping-slow {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          75%, 100% {
+            transform: scale(2);
+            opacity: 0;
+          }
+        }
+
+        /* Animation utilities */
+        .animate-fade-in-up {
+          animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .animate-fade-in-down {
+          animation: fadeInDown 0.8s ease-out both;
+        }
+
+        .animate-slide-in-left {
+          animation: slideInLeft 0.8s ease-out both;
+        }
+
+        .animate-slide-in-right {
+          animation: slideInRight 0.8s ease-out both;
+        }
+
+        .animate-slide-in-up {
+          animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .animate-scale-in {
+          animation: scaleIn 0.6s ease-out both;
+        }
+
+        .animate-text-reveal {
+          animation: textReveal 0.8s ease-out both;
+        }
+
+        .animate-count-up {
+          animation: countUp 1s ease-out both;
+        }
+
+        .animate-stagger-item {
+          animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .animate-ping-slow {
+          animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        .animation-delay-200 {
+          animation-delay: 200ms;
+        }
+
+        .animation-delay-300 {
+          animation-delay: 300ms;
+        }
+
+        .animation-delay-400 {
+          animation-delay: 400ms;
+        }
+
+        .animation-delay-600 {
+          animation-delay: 600ms;
+        }
+
+        .animation-delay-800 {
+          animation-delay: 800ms;
+        }
+
+        .animation-delay-1000 {
+          animation-delay: 1000ms;
+        }
+
+        /* Section entrance animations */
+        .section-entrance {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: all 0.8s ease-out;
+        }
+
+        .section-entrance.animate-in {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 640px) {
+          @keyframes blob {
+            0% {
+              transform: translate(0px, 0px) scale(1);
+            }
+            33% {
+              transform: translate(10px, -15px) scale(1.1);
+            }
+            66% {
+              transform: translate(-8px, 8px) scale(0.9);
+            }
+            100% {
+              transform: translate(0px, 0px) scale(1);
+            }
+          }
+        }
+      `}</style>
     </div>
   );
 };

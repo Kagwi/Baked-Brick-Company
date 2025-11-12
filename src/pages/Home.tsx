@@ -399,7 +399,7 @@ const Home: React.FC = () => {
                 id: 6,
                 title: "Garden Water Feature",
                 category: "Ponds & Water Gardens",
-                image: "https://github.com/Kagwi/Baked-Brick-Company/blob/main/Garden%20Water%20Features.jpeg"
+                image: "https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Garden%20Water%20Features.jpeg"
               }
             ].map((project, index) => (
               <div 

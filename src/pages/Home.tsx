@@ -369,7 +369,7 @@ const Home: React.FC = () => {
                 id: 1,
                 title: "Residential Lawn Transformation",
                 category: "Lawn Care & Maintenance",
-                image: "https://images.pexels.com/photos/2121197/pexels-photo-2121197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                image: "https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick%20Lawn.jpeg"
               },
               {
                 id: 2,
@@ -381,25 +381,25 @@ const Home: React.FC = () => {
                 id: 3,
                 title: "Stone Patio & Pathway",
                 category: "Hardscape Installation",
-                image: "https://images.pexels.com/photos/221047/pexels-photo-221047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                image: "https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick%20Patio.jpeg"
               },
               {
                 id: 4,
                 title: "Modern Garden Landscape",
                 category: "Complete Garden Design",
-                image: "https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                image: "https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick%20Garden%20Landscape.jpeg"
               },
               {
                 id: 5,
                 title: "Outdoor Entertainment Area",
                 category: "Patio & Deck Design",
-                image: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                image: "https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick%20Entertainment%20Area.jpeg"
               },
               {
                 id: 6,
                 title: "Garden Water Feature",
                 category: "Ponds & Water Gardens",
-                image: "https://images.pexels.com/photos/2583855/pexels-photo-2583855.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                image: "https://github.com/Kagwi/Baked-Brick-Company/blob/main/Garden%20Water%20Features.jpeg"
               }
             ].map((project, index) => (
               <div 
@@ -438,7 +438,7 @@ const Home: React.FC = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: 'url(https://images.pexels.com/photos/1771335/pexels-photo-1771335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'
+            backgroundImage: 'url(https://raw.githubusercontent.com/Kagwi/Baked-Brick-Company/refs/heads/main/Baked%20Brick10.jpg)'
           }}
         >
           <div className="absolute inset-0 bg-stone-900/70"></div>

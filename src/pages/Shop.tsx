@@ -26,21 +26,21 @@ const categories = [
         name: "Landscape Rakes", 
         description: "Wide-head rake for grading and leveling soil in large garden areas. Adjustable handle available.",
         price: 4200,
-        image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        image: "/Landscape Rake.jpg"
       },
       { 
         id: 4, 
         name: "Draw Hoes", 
         description: "Traditional hoe for weeding and cultivating soil. Sharp steel blade with wooden handle.",
         price: 1800,
-        image: "https://images.unsplash.com/photo-1574175678800-9ee062c7b9c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        image: "/Draw Hoe.png"
       },
       { 
         id: 5, 
         name: "Stirrup Hoes", 
         description: "Oscillating hoe that cuts weeds at root level with minimal soil disturbance. Ergonomic design.",
         price: 2800,
-        image: "https://images.unsplash.com/photo-1581674210506-84b7b3d4d6c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+        image: "/stirrup hoe.jpg"
       },
       { 
         id: 6, 

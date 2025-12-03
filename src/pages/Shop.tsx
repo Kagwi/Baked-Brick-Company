@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaWhatsapp, FaEnvelope, FaShoppingCart, FaPlus, FaMinus, FaTrash } from "react-icons/fa";
 
@@ -354,6 +354,17 @@ const categories = [
 export default function Shop() {
   const [cart, setCart] = useState([]);
   const [cartVisible, setCartVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle scroll for animations and cart button positioning
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Function to generate WhatsApp message
   const generateWhatsAppMessage = (product) => {
@@ -416,10 +427,10 @@ export default function Shop() {
       <div className={`fixed right-0 top-0 h-full w-80 md:w-96 bg-white shadow-2xl z-50 transform transition-transform duration-300 ${cartVisible ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="p-6 h-full flex flex-col">
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-amber-800">Your Cart</h2>
+            <h2 className="text-2xl font-bold text-green-800">Your Cart</h2>
             <button 
               onClick={() => setCartVisible(false)}
-              className="text-gray-500 hover:text-gray-700 text-xl"
+              className="text-gray-500 hover:text-gray-700 text-xl transition-colors"
             >
               ✕
             </button>
@@ -434,7 +445,7 @@ export default function Shop() {
             <>
               <div className="flex-1 overflow-y-auto mb-4">
                 {cart.map((item) => (
-                  <div key={item.id} className="mb-4 pb-4 border-b">
+                  <div key={item.id} className="mb-4 pb-4 border-b border-gray-200">
                     <div className="flex items-start">
                       <img 
                         src={item.image} 
@@ -443,24 +454,24 @@ export default function Shop() {
                       />
                       <div className="flex-1">
                         <h3 className="font-semibold text-gray-800">{item.name}</h3>
-                        <p className="text-amber-700 font-bold">KSh {item.price.toLocaleString()}</p>
+                        <p className="text-green-700 font-bold">KSh {item.price.toLocaleString()}</p>
                         <div className="flex items-center mt-2">
                           <button 
                             onClick={() => removeFromCart(item.id)}
-                            className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300"
+                            className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors"
                           >
                             <FaMinus size={12} />
                           </button>
                           <span className="mx-3 font-semibold">{item.quantity}</span>
                           <button 
                             onClick={() => addToCart(item)}
-                            className="w-8 h-8 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center hover:bg-amber-200"
+                            className="w-8 h-8 rounded-full bg-green-100 text-green-800 flex items-center justify-center hover:bg-green-200 transition-colors"
                           >
                             <FaPlus size={12} />
                           </button>
                           <button 
                             onClick={() => removeItemCompletely(item.id)}
-                            className="ml-4 text-red-500 hover:text-red-700"
+                            className="ml-4 text-red-500 hover:text-red-700 transition-colors"
                           >
                             <FaTrash size={14} />
                           </button>
@@ -471,10 +482,10 @@ export default function Shop() {
                 ))}
               </div>
               
-              <div className="border-t pt-4">
+              <div className="border-t border-gray-200 pt-4">
                 <div className="flex justify-between items-center mb-4">
                   <span className="text-lg font-semibold">Total:</span>
-                  <span className="text-2xl font-bold text-amber-800">KSh {getCartTotal().toLocaleString()}</span>
+                  <span className="text-2xl font-bold text-green-800">KSh {getCartTotal().toLocaleString()}</span>
                 </div>
                 
                 {/* WhatsApp Order Button */}
@@ -482,7 +493,7 @@ export default function Shop() {
                   href={`https://wa.me/254722381743?text=${encodeURIComponent(`Hello! I'd like to place an order from Baked Brick Company.\n\nOrder Summary:\n${cart.map(item => `- ${item.name} x${item.quantity}: KSh ${(item.price * item.quantity).toLocaleString()}`).join('\n')}\n\nTotal: KSh ${getCartTotal().toLocaleString()}\n\nPlease provide payment and delivery details.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center mb-3 transition-colors"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center mb-3 transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
                 >
                   <FaWhatsapp className="mr-2" /> Order via WhatsApp
                 </a>
@@ -490,7 +501,7 @@ export default function Shop() {
                 {/* Email Order Button */}
                 <a
                   href={`mailto:support@bakedbrick.co.ke?subject=${encodeURIComponent('Order Inquiry')}&body=${encodeURIComponent(`Dear Baked Brick Team,\n\nI would like to place an order for the following items:\n\n${cart.map(item => `- ${item.name} (Quantity: ${item.quantity}) - KSh ${(item.price * item.quantity).toLocaleString()}`).join('\n')}\n\nTotal Amount: KSh ${getCartTotal().toLocaleString()}\n\nPlease provide information on payment methods, delivery options, and estimated delivery time.\n\nThank you.`)}`}
-                  className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center transition-colors"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
                 >
                   <FaEnvelope className="mr-2" /> Order via Email
                 </a>
@@ -519,30 +530,35 @@ export default function Shop() {
         <div className="bg-black/60 w-full">
           {/* Title Section */}
           <div className="text-center px-6 py-20 max-w-6xl mx-auto">
-            <h1 className="text-5xl font-extrabold text-white mb-4">Landscaping Products</h1>
-            <p className="text-lg text-gray-100 max-w-3xl mx-auto">
+            <h1 className="text-5xl font-extrabold text-white mb-4 animate-slide-down">Landscaping Products</h1>
+            <p className="text-lg text-gray-100 max-w-3xl mx-auto animate-slide-up">
               Discover our full range of professional landscaping tools and materials.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Cart Button */}
-      <div className="fixed top-4 right-4 z-30">
+      {/* Cart Button - Positioned better to avoid nav bar */}
+      <div className={`fixed z-30 transition-all duration-300 ${isScrolled ? 'top-24' : 'top-28'} right-4 md:right-6`}>
         <button 
           onClick={() => setCartVisible(true)}
-          className="bg-amber-700 hover:bg-amber-800 text-white rounded-full px-5 py-3 flex items-center shadow-lg transition-all hover:scale-105"
+          className="bg-green-600 hover:bg-green-700 text-white rounded-full px-5 py-3 flex items-center shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
         >
           <FaShoppingCart className="mr-2" />
           Cart ({getCartItemCount()})
+          {cart.length > 0 && (
+            <span className="ml-2 bg-white text-green-600 text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
+              {getCartItemCount()}
+            </span>
+          )}
         </button>
       </div>
 
       {/* Products Section */}
-      <div className="px-4 md:px-6 py-12 max-w-6xl mx-auto space-y-12">
+      <div className="px-4 md:px-6 py-12 max-w-6xl mx-auto space-y-16">
         {categories.map((category, idx) => (
-          <div key={idx} className="bg-white rounded-xl p-6 shadow-lg">
-            <h2 className="text-3xl font-bold text-amber-800 mb-8 border-b border-amber-300 pb-2">
+          <div key={idx} className="bg-white rounded-xl p-6 shadow-lg animate-on-scroll">
+            <h2 className="text-3xl font-bold text-green-800 mb-8 border-b border-green-300 pb-2 animate-slide-down">
               {category.name}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -551,22 +567,29 @@ export default function Shop() {
                 const emailContent = generateEmailContent(product);
                 
                 return (
-                  <div key={product.id} className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
+                  <div 
+                    key={product.id} 
+                    className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+                  >
                     <div className="relative h-48 overflow-hidden">
                       <img 
                         src={product.image} 
                         alt={product.name}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                       />
                     </div>
                     <div className="p-5">
-                      <h3 className="text-xl font-bold text-gray-800 mb-2">{product.name}</h3>
-                      <p className="text-gray-600 mb-4 text-sm">{product.description}</p>
+                      <h3 className="text-xl font-bold text-gray-800 mb-2 animate-slide-down">
+                        {product.name}
+                      </h3>
+                      <p className="text-gray-600 mb-4 text-sm animate-slide-up">
+                        {product.description}
+                      </p>
                       <div className="flex justify-between items-center mb-4">
-                        <span className="text-2xl font-bold text-amber-700">KSh {product.price.toLocaleString()}</span>
+                        <span className="text-2xl font-bold text-green-700">KSh {product.price.toLocaleString()}</span>
                         <button 
                           onClick={() => addToCart(product)}
-                          className="bg-amber-100 text-amber-800 hover:bg-amber-200 font-semibold py-2 px-4 rounded-lg transition-colors"
+                          className="bg-green-100 text-green-800 hover:bg-green-200 font-semibold py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105"
                         >
                           Add to Cart
                         </button>
@@ -578,14 +601,14 @@ export default function Shop() {
                           href={`https://wa.me/254722381743?text=${encodeURIComponent(whatsappMessage)}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 rounded-lg flex items-center justify-center transition-colors"
+                          className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
                         >
                           <FaWhatsapp className="mr-2" /> Buy on WhatsApp
                         </a>
                         
                         <a
                           href={`mailto:support@bakedbrick.co.ke?subject=${encodeURIComponent(emailContent.subject)}&body=${encodeURIComponent(emailContent.body)}`}
-                          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg flex items-center justify-center transition-colors"
+                          className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
                         >
                           <FaEnvelope className="mr-2" /> Inquire via Email
                         </a>
@@ -602,11 +625,88 @@ export default function Shop() {
       {/* CTA Button */}
       <div className="text-center mt-16 mb-10">
         <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
-          <button className="bg-amber-700 hover:bg-amber-800 text-white text-lg font-medium px-8 py-4 rounded-full shadow-lg transition duration-300">
+          <button className="bg-green-600 hover:bg-green-700 text-white text-lg font-medium px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
             Order a Customized Order
           </button>
         </Link>
       </div>
+
+      {/* Add custom CSS for animations */}
+      <style jsx>{`
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-slide-down {
+          animation: slideDown 0.8s ease-out;
+        }
+
+        .animate-slide-up {
+          animation: slideUp 0.8s ease-out 0.2s both;
+        }
+
+        .animate-on-scroll {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.in-view {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Intersection Observer for scroll animations */
+        @media (prefers-reduced-motion: no-preference) {
+          .animate-on-scroll {
+            animation: none;
+          }
+        }
+      `}</style>
+
+      {/* JavaScript for scroll animations */}
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+              root: null,
+              rootMargin: '0px',
+              threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('in-view');
+                }
+              });
+            }, observerOptions);
+
+            // Observe all product sections
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+              observer.observe(el);
+            });
+          });
+        `
+      }} />
     </div>
   );
 }

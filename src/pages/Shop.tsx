@@ -115,7 +115,7 @@ const categories = [
         name: "String Trimmers", 
         description: "Gas-powered string trimmer with 2-line head, adjustable shaft, and shoulder strap.",
         price: 12500,
-        image: ""
+        image: "/String Trimmer.jpg"
       },
       { 
         id: 16, 

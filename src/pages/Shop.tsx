@@ -12,14 +12,14 @@ const categories = [
         name: "Leaf Rakes", 
         description: "Lightweight rake designed for gathering leaves and light debris. Made from durable plastic with flexible tines.",
         price: 2500,
-        image: "https://images.unsplash.com/photo-1581674210506-84b7b3d4d6c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        image: "/Leaf Rake.jpg"
       },
       { 
         id: 2, 
         name: "Bow Rakes", 
         description: "Heavy-duty steel rake with sturdy tines for moving soil, gravel, and leveling surfaces.",
         price: 3200,
-        image: "https://images.unsplash.com/photo-1583407627255-7ab5c8dc0b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        image: "/Bow Rake.jpg"
       },
       { 
         id: 3, 

@@ -183,49 +183,49 @@ const categories = [
         name: "Drip Systems", 
         description: "Complete drip irrigation kit for gardens up to 500 sq ft. Timer included.",
         price: 18500,
-        image: "https://images.unsplash.com/photo-1583407627255-7ab5c8dc0b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=30"
+        image: "/Drip Irrigaion Pipes.png"
       },
       { 
         id: 25, 
         name: "Rotary Sprinklers", 
         description: "Adjustable rotary sprinkler covers up to 3000 sq ft. Multiple pattern settings.",
         price: 4500,
-        image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=30"
+        image: "/Rotary Sprinklers.png"
       },
       { 
         id: 26, 
         name: "Oscillating Sprinklers", 
         description: "Oscillating sprinkler with width and range adjustment. Metal construction.",
         price: 3800,
-        image: "https://images.unsplash.com/photo-1574175678800-9ee062c7b9c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=30"
+        image: "/Oscillating Sprinkler.png"
       },
       { 
         id: 27, 
         name: "Garden Hoses", 
         description: "50-foot heavy-duty garden hose with brass fittings. 5-layer construction.",
         price: 5200,
-        image: "https://images.unsplash.com/photo-1581674210506-84b7b3d4d6c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=30"
+        image: "/Garden Hoses.jpg"
       },
       { 
         id: 28, 
         name: "Hose Reels", 
         description: "Wall-mounted hose reel with automatic rewind and 150-foot capacity.",
         price: 12500,
-        image: "https://images.unsplash.com/photo-1583407627255-7ab5c8dc0b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=25"
+        image: "/Hose Reels.jpg"
       },
       { 
         id: 29, 
         name: "Hose Carts", 
         description: "Mobile hose cart with large wheels for easy movement around the garden.",
         price: 8500,
-        image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=25"
+        image: "/Hose Carts.jpg"
       },
       { 
         id: 30, 
         name: "Watering Cans", 
         description: "2-gallon metal watering can with brass rose and removable spout.",
         price: 2800,
-        image: "https://images.unsplash.com/photo-1574175678800-9ee062c7b9c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=25"
+        image: "/Watering Cans.jpg"
       }
     ]
   },

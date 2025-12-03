@@ -472,7 +472,7 @@ export default function Shop() {
                       <img 
                         src={item.image} 
                         alt={item.name}
-                        className="w-16 h-16 object-cover rounded-md mr-4"
+                        className="w-16 h-16 object-contain rounded-md mr-4 bg-gray-100 p-1"
                       />
                       <div className="flex-1">
                         <h3 className="font-semibold text-gray-800">{item.name}</h3>
@@ -597,20 +597,26 @@ export default function Shop() {
                 return (
                   <div 
                     key={product.id} 
-                    className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+                    className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col"
                   >
-                    <div className="relative h-48 overflow-hidden">
+                    {/* Image Container - Fixed height with centered image */}
+                    <div className="relative h-64 w-full overflow-hidden bg-gray-100 flex items-center justify-center p-4">
                       <img 
                         src={product.image} 
                         alt={product.name}
-                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                        className="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-500"
+                        onError={(e) => {
+                          e.target.src = "https://via.placeholder.com/400x300?text=Image+Loading";
+                          e.target.className = "max-h-full max-w-full object-contain";
+                        }}
                       />
                     </div>
-                    <div className="p-5">
+                    
+                    <div className="p-5 flex flex-col flex-grow">
                       <h3 className="text-xl font-bold text-gray-800 mb-2 transition-all duration-500">
                         {product.name}
                       </h3>
-                      <p className="text-gray-600 mb-4 text-sm transition-all duration-500 delay-100">
+                      <p className="text-gray-600 mb-4 text-sm transition-all duration-500 delay-100 flex-grow">
                         {product.description}
                       </p>
                       <div className="flex justify-between items-center mb-4">

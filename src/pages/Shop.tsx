@@ -101,77 +101,77 @@ const categories = [
         name: "Push Lawn Mowers", 
         description: "Self-propelled petrol lawn mower with 21-inch cutting deck and grass bag. 160cc engine.",
         price: 32500,
-        image: "https://images.unsplash.com/photo-1581674210506-84b7b3d4d6c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=20"
+        image: "/Lawn Mower Push.png"
       },
       { 
         id: 14, 
         name: "Ride-on Lawn Mowers", 
         description: "Ride-on mower with 42-inch cutting width, hydrostatic transmission, and 15HP engine.",
         price: 185000,
-        image: "https://images.unsplash.com/photo-1574175678800-9ee062c7b9c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=20"
+        image: "/Ride-On Lawn Mower.jpg"
       },
       { 
         id: 15, 
         name: "String Trimmers", 
         description: "Gas-powered string trimmer with 2-line head, adjustable shaft, and shoulder strap.",
         price: 12500,
-        image: "https://images.unsplash.com/photo-1563859907678-b0714e6d70aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=20"
+        image: ""
       },
       { 
         id: 16, 
         name: "Leaf Blowers", 
         description: "Backpack leaf blower with 52cc engine, variable speed control, and noise reduction.",
         price: 28500,
-        image: "https://images.unsplash.com/photo-1583407627255-7ab5c8dc0b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=20"
+        image: "/Leaf Blower.jpg"
       },
       { 
         id: 17, 
         name: "Leaf Vacuums", 
         description: "Electric leaf vacuum with mulch kit, 12-amp motor, and 16:1 reduction ratio.",
         price: 19500,
-        image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=20"
+        image: "/Leaf Vacuum.png"
       },
       { 
         id: 18, 
         name: "Chainsaws", 
         description: "18-inch gas chainsaw with automatic oiler, anti-vibration handle, and quick-start system.",
         price: 42500,
-        image: "https://images.unsplash.com/photo-1574175678800-9ee062c7b9c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=10"
+        image: "/Chainsaw.jpg"
       },
       { 
         id: 19, 
         name: "Hedge Trimmers (electric)", 
         description: "Corded electric hedge trimmer with 24-inch dual-action blades and safety lock.",
         price: 12500,
-        image: "https://images.unsplash.com/photo-1581674210506-84b7b3d4d6c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=10"
+        image: "/Electric Hedge Trimmers.png"
       },
       { 
         id: 20, 
         name: "Hedge Trimmers (gas)", 
         description: "Gas-powered hedge trimmer with 26-inch cutting blade and anti-vibration system.",
         price: 24500,
-        image: "https://images.unsplash.com/photo-1583407627255-7ab5c8dc0b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=10"
+        image: "/Gas Hedge Trimmers.png"
       },
       { 
         id: 21, 
         name: "Mini Tillers", 
         description: "Compact front-tine tiller for small gardens and flower beds. Adjustable tilling width.",
         price: 35500,
-        image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=10"
+        image: "/Mini Tiller.jpg"
       },
       { 
         id: 22, 
         name: "Cultivators", 
         description: "Gas cultivator with 4 steel tines for soil aeration and weed removal in tight spaces.",
         price: 28500,
-        image: "https://images.unsplash.com/photo-1574175678800-9ee062c7b9c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=5"
+        image: "/Cultivators.jpg"
       },
       { 
         id: 23, 
         name: "Pressure Washers", 
         description: "2000 PSI pressure washer for cleaning patios, driveways, and outdoor furniture.",
         price: 38500,
-        image: "https://images.unsplash.com/photo-1581674210506-84b7b3d4d6c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=5"
+        image: "/Pressure Washer.png"
       }
     ]
   },

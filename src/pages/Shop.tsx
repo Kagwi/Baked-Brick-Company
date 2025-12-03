@@ -237,35 +237,35 @@ const categories = [
         name: "Planters and Pots", 
         description: "Assorted ceramic, plastic, and wooden planters in various sizes. UV resistant.",
         price: 800,
-        image: "https://images.unsplash.com/photo-1581674210506-84b7b3d4d6c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=35"
+        image: "/Planters.jpg"
       },
       { 
         id: 32, 
         name: "Raised Garden Beds", 
         description: "Cedar raised garden bed kit 4x8 ft. Easy assembly, no tools required.",
         price: 24500,
-        image: "https://images.unsplash.com/photo-1583407627255-7ab5c8dc0b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=35"
+        image: "/Raised Garden Beds.jpg"
       },
       { 
         id: 33, 
         name: "Compost Bins", 
         description: "80-gallon compost bin with aeration vents and removable door for easy access.",
         price: 12500,
-        image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=35"
+        image: "/Compost Bin.png"
       },
       { 
         id: 34, 
         name: "Seed Starters", 
         description: "72-cell propagation tray with humidity dome and heat mat.",
         price: 4500,
-        image: "https://images.unsplash.com/photo-1574175678800-9ee062c7b9c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=35"
+        image: "/Seed Starting Systems.jpg"
       },
       { 
         id: 35, 
         name: "Top Soil", 
         description: "Premium organic topsoil blend for gardens and lawns. 40kg bag.",
         price: 1800,
-        image: "https://images.unsplash.com/photo-1581674210506-84b7b3d4d6c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=40"
+        image: "/Top Soil.jpg"
       }
     ]
   },
@@ -277,21 +277,21 @@ const categories = [
         name: "Quartz Gravel", 
         description: "Decorative quartz gravel for pathways and garden beds. Available in multiple colors.",
         price: 4500,
-        image: "https://images.unsplash.com/photo-1583407627255-7ab5c8dc0b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=50"
+        image: "/Quartz Gravel.jpg"
       },
       { 
         id: 37, 
-        name: "Retaining Wall Blocks", 
+        name: "Precast Concrete for Retaining Wall Blocks", 
         description: "Precast concrete blocks for building retaining walls. Interlocking design.",
         price: 850,
-        image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=50"
+        image: "/Precast Concrete for Retaining Wall Blocks.png"
       },
       { 
         id: 38, 
         name: "Flagstones", 
         description: "Natural flagstone for patios and walkways. Various sizes and thicknesses.",
         price: 650,
-        image: "https://images.unsplash.com/photo-1574175678800-9ee062c7b9c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=50"
+        image: "/Flag Stone.jpg"
       }
     ]
   },
@@ -303,49 +303,49 @@ const categories = [
         name: "Fertilizers & Chemicals", 
         description: "Balanced NPK fertilizer for general lawn and garden use. 20kg bag.",
         price: 4500,
-        image: "https://images.unsplash.com/photo-1581674210506-84b7b3d4d6c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=55"
+        image: "/Fertilizer.jpg"
       },
       { 
         id: 40, 
         name: "Organic Fertilizers", 
         description: "100% organic fertilizer from composted manure and plant materials.",
         price: 5200,
-        image: "https://images.unsplash.com/photo-1583407627255-7ab5c8dc0b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=55"
+        image: "/Organic Fertilizer.jpg"
       },
       { 
         id: 41, 
         name: "Grass Seed", 
         description: "Premium grass seed blend for Kenyan climate. Fast germination.",
         price: 3500,
-        image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=55"
+        image: "/Grass Seed.jpg"
       },
       { 
         id: 42, 
         name: "Weed Killers", 
         description: "Selective weed killer for lawns. Kills weeds without harming grass.",
         price: 2800,
-        image: "https://images.unsplash.com/photo-1574175678800-9ee062c7b9c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=55"
+        image: "/Weed Killer.png"
       },
       { 
         id: 43, 
         name: "Eco-friendly Insecticides", 
         description: "Natural insecticide made from neem oil. Safe for vegetables and ornamentals.",
         price: 3200,
-        image: "https://images.unsplash.com/photo-1581674210506-84b7b3d4d6c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+        image: "/Eco-Friendly Insecticide.jpg"
       },
       { 
         id: 44, 
         name: "Eco-friendly Pesticides", 
         description: "Organic pesticide with garlic and chili extract. Controls common garden pests.",
         price: 2900,
-        image: "https://images.unsplash.com/photo-1583407627255-7ab5c8dc0b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+        image: "/Eco-Friendly Pesticide.jpg"
       },
       { 
         id: 45, 
         name: "Plant Food", 
         description: "Specialized plant food for flowers, trees, and vegetables. Slow-release formula.",
         price: 3800,
-        image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+        image: "/Flower and Vegetable Plant Food.png"
       }
     ]
   }

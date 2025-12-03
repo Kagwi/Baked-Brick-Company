@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaWhatsapp, FaEnvelope, FaShoppingCart, FaPlus, FaMinus, FaTrash } from "react-icons/fa";
 
@@ -355,15 +355,37 @@ export default function Shop() {
   const [cart, setCart] = useState([]);
   const [cartVisible, setCartVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const categoryRefs = useRef([]);
 
   // Handle scroll for animations and cart button positioning
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Trigger animations on scroll
+      categoryRefs.current.forEach((ref, index) => {
+        if (ref) {
+          const rect = ref.getBoundingClientRect();
+          const isInView = rect.top < window.innerHeight * 0.8;
+          
+          if (isInView) {
+            ref.classList.add('opacity-100', 'translate-y-0');
+            ref.classList.remove('opacity-0', 'translate-y-8');
+          }
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll);
+    // Initial check
+    handleScroll();
+    
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Initialize refs
+  useEffect(() => {
+    categoryRefs.current = categoryRefs.current.slice(0, categories.length);
   }, []);
 
   // Function to generate WhatsApp message
@@ -530,8 +552,10 @@ export default function Shop() {
         <div className="bg-black/60 w-full">
           {/* Title Section */}
           <div className="text-center px-6 py-20 max-w-6xl mx-auto">
-            <h1 className="text-5xl font-extrabold text-white mb-4 animate-slide-down">Landscaping Products</h1>
-            <p className="text-lg text-gray-100 max-w-3xl mx-auto animate-slide-up">
+            <h1 className="text-5xl font-extrabold text-white mb-4 transition-all duration-700 transform translate-y-0 opacity-100">
+              Landscaping Products
+            </h1>
+            <p className="text-lg text-gray-100 max-w-3xl mx-auto transition-all duration-700 delay-200 transform translate-y-0 opacity-100">
               Discover our full range of professional landscaping tools and materials.
             </p>
           </div>
@@ -557,8 +581,12 @@ export default function Shop() {
       {/* Products Section */}
       <div className="px-4 md:px-6 py-12 max-w-6xl mx-auto space-y-16">
         {categories.map((category, idx) => (
-          <div key={idx} className="bg-white rounded-xl p-6 shadow-lg animate-on-scroll">
-            <h2 className="text-3xl font-bold text-green-800 mb-8 border-b border-green-300 pb-2 animate-slide-down">
+          <div 
+            key={idx} 
+            ref={el => categoryRefs.current[idx] = el}
+            className="bg-white rounded-xl p-6 shadow-lg transition-all duration-700 transform opacity-0 translate-y-8"
+          >
+            <h2 className="text-3xl font-bold text-green-800 mb-8 border-b border-green-300 pb-2 transition-all duration-500 delay-100">
               {category.name}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -579,10 +607,10 @@ export default function Shop() {
                       />
                     </div>
                     <div className="p-5">
-                      <h3 className="text-xl font-bold text-gray-800 mb-2 animate-slide-down">
+                      <h3 className="text-xl font-bold text-gray-800 mb-2 transition-all duration-500">
                         {product.name}
                       </h3>
-                      <p className="text-gray-600 mb-4 text-sm animate-slide-up">
+                      <p className="text-gray-600 mb-4 text-sm transition-all duration-500 delay-100">
                         {product.description}
                       </p>
                       <div className="flex justify-between items-center mb-4">
@@ -630,83 +658,6 @@ export default function Shop() {
           </button>
         </Link>
       </div>
-
-      {/* Add custom CSS for animations */}
-      <style jsx>{`
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-slide-down {
-          animation: slideDown 0.8s ease-out;
-        }
-
-        .animate-slide-up {
-          animation: slideUp 0.8s ease-out 0.2s both;
-        }
-
-        .animate-on-scroll {
-          opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .animate-on-scroll.in-view {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        /* Intersection Observer for scroll animations */
-        @media (prefers-reduced-motion: no-preference) {
-          .animate-on-scroll {
-            animation: none;
-          }
-        }
-      `}</style>
-
-      {/* JavaScript for scroll animations */}
-      <script dangerouslySetInnerHTML={{
-        __html: `
-          document.addEventListener('DOMContentLoaded', function() {
-            const observerOptions = {
-              root: null,
-              rootMargin: '0px',
-              threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-              entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add('in-view');
-                }
-              });
-            }, observerOptions);
-
-            // Observe all product sections
-            document.querySelectorAll('.animate-on-scroll').forEach(el => {
-              observer.observe(el);
-            });
-          });
-        `
-      }} />
     </div>
   );
 }

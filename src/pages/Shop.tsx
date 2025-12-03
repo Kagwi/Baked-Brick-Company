@@ -47,49 +47,49 @@ const categories = [
         name: "Hand Weeders", 
         description: "Compact weeding tool for precision weed removal in tight spaces and flower beds.",
         price: 1200,
-        image: "https://images.unsplash.com/photo-1563859907678-b0714e6d70aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        image: "/Hand Weeder.jpg"
       },
       { 
         id: 7, 
         name: "Weed Pullers", 
         description: "Leverage-based tool for removing deep-rooted weeds without bending. Includes root extractor.",
         price: 3500,
-        image: "https://images.unsplash.com/photo-1583407627255-7ab5c8dc0b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+        image: "/Weed Puller.jpg"
       },
       { 
         id: 8, 
         name: "Manual Edgers", 
         description: "Steel half-moon edger for creating clean borders between lawn and garden beds.",
         price: 2200,
-        image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+        image: "/Manual Edgers.jpg"
       },
       { 
         id: 9, 
         name: "Powered Edgers", 
         description: "Gas-powered edger for professional-grade lawn edging. Includes depth adjustment.",
         price: 18500,
-        image: "https://images.unsplash.com/photo-1574175678800-9ee062c7b9c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+        image: "/Powered Edgers.avif"
       },
       { 
         id: 10, 
         name: "Loppers", 
         description: "Heavy-duty pruning tool with 24-inch handles for cutting branches up to 2 inches thick.",
         price: 4500,
-        image: "https://images.unsplash.com/photo-1581674210506-84b7b3d4d6c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=40"
+        image: "/Loppers.jpg"
       },
       { 
         id: 11, 
         name: "Tree Pruners", 
         description: "Telescopic tree pruner with extendable pole for reaching high branches. Includes saw attachment.",
         price: 6800,
-        image: "https://images.unsplash.com/photo-1583407627255-7ab5c8dc0b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=40"
+        image: "/Tree Prunner.png"
       },
       { 
         id: 12, 
         name: "Soil Scoops", 
         description: "Stainless steel soil scoop for potting, transplanting, and mixing soil. Comfort grip handle.",
         price: 1500,
-        image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=40"
+        image: "/Soil Scoop.jpg"
       }
     ]
   },

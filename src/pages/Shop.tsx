@@ -78,6 +78,18 @@ const categories = [
         name: "Soil Scoops", 
         description: "Stainless steel soil scoop for potting, transplanting, and mixing soil. Comfort grip handle.",
         image: "/Soil Scoop.jpg"
+      },
+      { 
+        id: 46, 
+        name: "Machetes", 
+        description: "Heavy-duty machete for clearing brush, cutting vegetation, and general landscaping work.",
+        image: "/Machete.png"
+      },
+      { 
+        id: 47, 
+        name: "Pangas", 
+        description: "Traditional African cutting tool, ideal for clearing bushes, chopping wood, and agricultural work.",
+        image: "/Panga.jpg"
       }
     ]
   },
@@ -149,6 +161,12 @@ const categories = [
         name: "Pressure Washers", 
         description: "2000 PSI pressure washer for cleaning patios, driveways, and outdoor furniture.",
         image: "/Pressure Washer.png"
+      },
+      { 
+        id: 51, 
+        name: "Brush Cutters", 
+        description: "Powerful brush cutter for clearing thick vegetation, grass, and bushes in large areas.",
+        image: "/Brush Cutter.jpeg"
       }
     ]
   },
@@ -301,6 +319,29 @@ const categories = [
         name: "Plant Food", 
         description: "Specialized plant food for flowers, trees, and vegetables. Slow-release formula.",
         image: "/Flower and Vegetable Plant Food.png"
+      }
+    ]
+  },
+  {
+    name: "Safety & Utility Equipment",
+    items: [
+      { 
+        id: 48, 
+        name: "Overalls", 
+        description: "Durable waterproof overalls for protection during landscaping and gardening work.",
+        image: "/Overalls.png"
+      },
+      { 
+        id: 49, 
+        name: "Wheelbarrows", 
+        description: "Heavy-duty wheelbarrow for transporting soil, gravel, tools, and other materials.",
+        image: "/Wheelbarrow.jpg"
+      },
+      { 
+        id: 50, 
+        name: "Gumboots", 
+        description: "Waterproof rubber boots for wet conditions, mud protection, and general outdoor work.",
+        image: "/Gumboots.jpg"
       }
     ]
   }

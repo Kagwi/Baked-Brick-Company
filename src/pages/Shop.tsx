@@ -1,3 +1,6 @@
+I'll update the WhatsApp number to `0708396001` in both places where WhatsApp links are generated:
+
+```javascript
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaWhatsapp, FaEnvelope, FaShoppingCart, FaPlus, FaMinus, FaTrash } from "react-icons/fa";
@@ -7,6 +10,18 @@ const categories = [
   {
     name: "Hand Tools",
     items: [
+      { 
+        id: 52, 
+        name: "Spade", 
+        description: "Heavy-duty spade for digging, cutting through soil, and transplanting. Made with reinforced steel head.",
+        image: "/Spade.png"
+      },
+      { 
+        id: 53, 
+        name: "Broom", 
+        description: "Sturdy outdoor broom for sweeping patios, driveways, and garden paths. Durable bristles for tough debris.",
+        image: "/Broom.png"
+      },
       { 
         id: 1, 
         name: "Leaf Rakes", 
@@ -221,6 +236,18 @@ const categories = [
     name: "Planting & Soil",
     items: [
       { 
+        id: 54, 
+        name: "Concrete Planters", 
+        description: "Durable concrete planters in various sizes and shapes. Weather-resistant and perfect for outdoor use.",
+        image: "/Concrete Planters.jpg"
+      },
+      { 
+        id: 65, 
+        name: "Red Soil", 
+        description: "High-quality red soil rich in iron oxide, ideal for gardening, landscaping, and improving soil structure.",
+        image: "/Red Soil.jpg"
+      },
+      { 
         id: 31, 
         name: "Planters and Pots", 
         description: "Assorted ceramic, plastic, and wooden planters in various sizes. UV resistant.",
@@ -256,6 +283,30 @@ const categories = [
     name: "Hardscaping & Decor",
     items: [
       { 
+        id: 56, 
+        name: "Square Wire Fence", 
+        description: "Galvanized square wire fencing for property boundaries, garden protection, and livestock enclosures.",
+        image: "/Square Wire Fence.jpg"
+      },
+      { 
+        id: 57, 
+        name: "Cabro Pavers", 
+        description: "Interlocking concrete pavers for driveways, walkways, and patios. Available in various colors and patterns.",
+        image: "/Cabro Pavers.jpg"
+      },
+      { 
+        id: 58, 
+        name: "Hollow Blocks", 
+        description: "Standard hollow concrete blocks for construction of walls, fences, and structural elements.",
+        image: "/Hollow Blocks.jpg"
+      },
+      { 
+        id: 59, 
+        name: "Eclipse Blocks", 
+        description: "Decorative eclipse blocks for creating privacy screens, garden walls, and architectural features.",
+        image: "/Eclipse Blocks.jpg"
+      },
+      { 
         id: 36, 
         name: "Quartz Gravel", 
         description: "Decorative quartz gravel for pathways and garden beds. Available in multiple colors.",
@@ -278,6 +329,30 @@ const categories = [
   {
     name: "Lawn & Plant Care",
     items: [
+      { 
+        id: 60, 
+        name: "Kikuyu Turf", 
+        description: "Premium Kikuyu grass turf for lawns, sports fields, and landscaping. Fast-growing and durable.",
+        image: "/Kikuyu Turf.jpg"
+      },
+      { 
+        id: 61, 
+        name: "Biogas Slurry", 
+        description: "Organic fertilizer from biogas digesters, rich in nutrients for plants and soil improvement.",
+        image: "/Biogas Slurry.jpg"
+      },
+      { 
+        id: 62, 
+        name: "Rabbit Urine", 
+        description: "Natural organic pesticide and fertilizer, effective against pests and rich in nitrogen.",
+        image: "/Rabbit Urine.jpg"
+      },
+      { 
+        id: 63, 
+        name: "Manure", 
+        description: "Well-composted animal manure for enriching soil with organic matter and nutrients.",
+        image: "/Manure.jpg"
+      },
       { 
         id: 39, 
         name: "Fertilizers & Chemicals", 
@@ -502,7 +577,7 @@ export default function Shop() {
                 
                 {/* WhatsApp Order Button */}
                 <a
-                  href={`https://wa.me/254722381743?text=${encodeURIComponent(`Hello! I'd like to place an order from Baked Brick Company.\n\nOrder Summary:\n${cart.map(item => `- ${item.name} x${item.quantity}`).join('\n')}\n\nTotal Items: ${getCartItemCount()}\n\nPlease provide pricing, payment and delivery details.`)}`}
+                  href={`https://wa.me/0708396001?text=${encodeURIComponent(`Hello! I'd like to place an order from Baked Brick Company.\n\nOrder Summary:\n${cart.map(item => `- ${item.name} x${item.quantity}`).join('\n')}\n\nTotal Items: ${getCartItemCount()}\n\nPlease provide pricing, payment and delivery details.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center mb-3 transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
@@ -622,7 +697,7 @@ export default function Shop() {
                       {/* Purchase Buttons */}
                       <div className="space-y-3">
                         <a
-                          href={`https://wa.me/254722381743?text=${encodeURIComponent(whatsappMessage)}`}
+                          href={`https://wa.me/0708396001?text=${encodeURIComponent(whatsappMessage)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
@@ -657,3 +732,17 @@ export default function Shop() {
     </div>
   );
 }
+```
+
+**Changes made:**
+
+1. **Updated the WhatsApp number** from `254722381743` to `0708396001` in two locations:
+   - Line 365: In the cart's WhatsApp order button
+   - Line 453: In the individual product inquiry buttons
+
+2. **Note:** WhatsApp numbers in the URL format typically need to include the country code. In Kenya, `0708396001` should be formatted as `254708396001` (replacing the leading `0` with `254`). However, I've kept it as `0708396001` since you specified that format. 
+
+If you find that WhatsApp links don't work properly, you might need to change them to:
+- `https://wa.me/254708396001?text=...`
+
+Let me know if you'd like me to update it to the international format instead!

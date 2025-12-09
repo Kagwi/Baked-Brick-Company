@@ -99,6 +99,77 @@ const categories = [
     ]
   },
   {
+    name: "Lawn & Plant Care",
+    items: [
+      { 
+        id: 60, 
+        name: "Kikuyu Turf", 
+        description: "Premium Kikuyu grass turf for lawns, sports fields, and landscaping. Fast-growing and durable.",
+        image: "/Kikuyu Turf.jpg"
+      },
+      { 
+        id: 61, 
+        name: "Biogas Slurry", 
+        description: "Organic fertilizer from biogas digesters, rich in nutrients for plants and soil improvement.",
+        image: "/Biogas Slurry.jpg"
+      },
+      { 
+        id: 62, 
+        name: "Rabbit Urine", 
+        description: "Natural organic pesticide and fertilizer, effective against pests and rich in nitrogen.",
+        image: "/Rabbit Urine.jpg"
+      },
+      { 
+        id: 63, 
+        name: "Manure", 
+        description: "Well-composted animal manure for enriching soil with organic matter and nutrients.",
+        image: "/Manure.jpg"
+      },
+      { 
+        id: 39, 
+        name: "Fertilizers & Chemicals", 
+        description: "Balanced NPK fertilizer for general lawn and garden use. 20kg bag.",
+        image: "/Fertilizer.jpg"
+      },
+      { 
+        id: 40, 
+        name: "Organic Fertilizers", 
+        description: "100% organic fertilizer from composted manure and plant materials.",
+        image: "/Organic Fertilizer.jpg"
+      },
+      { 
+        id: 41, 
+        name: "Grass Seed", 
+        description: "Premium grass seed blend for Kenyan climate. Fast germination.",
+        image: "/Grass Seed.jpg"
+      },
+      { 
+        id: 42, 
+        name: "Weed Killers", 
+        description: "Selective weed killer for lawns. Kills weeds without harming grass.",
+        image: "/Weed Killer.png"
+      },
+      { 
+        id: 43, 
+        name: "Eco-friendly Insecticides", 
+        description: "Natural insecticide made from neem oil. Safe for vegetables and ornamentals.",
+        image: "/Eco-Friendly Insecticide.jpg"
+      },
+      { 
+        id: 44, 
+        name: "Eco-friendly Pesticides", 
+        description: "Organic pesticide with garlic and chili extract. Controls common garden pests.",
+        image: "/Eco-Friendly Pesticide.jpg"
+      },
+      { 
+        id: 45, 
+        name: "Plant Food", 
+        description: "Specialized plant food for flowers, trees, and vegetables. Slow-release formula.",
+        image: "/Flower and Vegetable Plant Food.png"
+      }
+    ]
+  },
+  {
     name: "Hand Tools",
     items: [
       { 
@@ -320,77 +391,6 @@ const categories = [
         name: "Watering Cans", 
         description: "2-gallon metal watering can with brass rose and removable spout.",
         image: "/Watering Cans.jpg"
-      }
-    ]
-  },
-  {
-    name: "Lawn & Plant Care",
-    items: [
-      { 
-        id: 60, 
-        name: "Kikuyu Turf", 
-        description: "Premium Kikuyu grass turf for lawns, sports fields, and landscaping. Fast-growing and durable.",
-        image: "/Kikuyu Turf.jpg"
-      },
-      { 
-        id: 61, 
-        name: "Biogas Slurry", 
-        description: "Organic fertilizer from biogas digesters, rich in nutrients for plants and soil improvement.",
-        image: "/Biogas Slurry.jpg"
-      },
-      { 
-        id: 62, 
-        name: "Rabbit Urine", 
-        description: "Natural organic pesticide and fertilizer, effective against pests and rich in nitrogen.",
-        image: "/Rabbit Urine.jpg"
-      },
-      { 
-        id: 63, 
-        name: "Manure", 
-        description: "Well-composted animal manure for enriching soil with organic matter and nutrients.",
-        image: "/Manure.jpg"
-      },
-      { 
-        id: 39, 
-        name: "Fertilizers & Chemicals", 
-        description: "Balanced NPK fertilizer for general lawn and garden use. 20kg bag.",
-        image: "/Fertilizer.jpg"
-      },
-      { 
-        id: 40, 
-        name: "Organic Fertilizers", 
-        description: "100% organic fertilizer from composted manure and plant materials.",
-        image: "/Organic Fertilizer.jpg"
-      },
-      { 
-        id: 41, 
-        name: "Grass Seed", 
-        description: "Premium grass seed blend for Kenyan climate. Fast germination.",
-        image: "/Grass Seed.jpg"
-      },
-      { 
-        id: 42, 
-        name: "Weed Killers", 
-        description: "Selective weed killer for lawns. Kills weeds without harming grass.",
-        image: "/Weed Killer.png"
-      },
-      { 
-        id: 43, 
-        name: "Eco-friendly Insecticides", 
-        description: "Natural insecticide made from neem oil. Safe for vegetables and ornamentals.",
-        image: "/Eco-Friendly Insecticide.jpg"
-      },
-      { 
-        id: 44, 
-        name: "Eco-friendly Pesticides", 
-        description: "Organic pesticide with garlic and chili extract. Controls common garden pests.",
-        image: "/Eco-Friendly Pesticide.jpg"
-      },
-      { 
-        id: 45, 
-        name: "Plant Food", 
-        description: "Specialized plant food for flowers, trees, and vegetables. Slow-release formula.",
-        image: "/Flower and Vegetable Plant Food.png"
       }
     ]
   },

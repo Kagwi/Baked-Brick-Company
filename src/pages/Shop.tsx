@@ -5,6 +5,100 @@ import { FaWhatsapp, FaEnvelope, FaShoppingCart, FaPlus, FaMinus, FaTrash } from
 // Product data structure with all required information
 const categories = [
   {
+    name: "Planting & Soil",
+    items: [
+      { 
+        id: 54, 
+        name: "Concrete Planters", 
+        description: "Durable concrete planters in various sizes and shapes. Weather-resistant and perfect for outdoor use.",
+        image: "/Concrete Planters.jpg"
+      },
+      { 
+        id: 65, 
+        name: "Red Soil", 
+        description: "High-quality red soil rich in iron oxide, ideal for gardening, landscaping, and improving soil structure.",
+        image: "/Red Soil.jpg"
+      },
+      { 
+        id: 31, 
+        name: "Planters and Pots", 
+        description: "Assorted ceramic, plastic, and wooden planters in various sizes. UV resistant.",
+        image: "/Planters.jpg"
+      },
+      { 
+        id: 32, 
+        name: "Raised Garden Beds", 
+        description: "Cedar raised garden bed kit 4x8 ft. Easy assembly, no tools required.",
+        image: "/Raised Garden Beds.jpg"
+      },
+      { 
+        id: 33, 
+        name: "Compost Bins", 
+        description: "80-gallon compost bin with aeration vents and removable door for easy access.",
+        image: "/Compost Bin.png"
+      },
+      { 
+        id: 34, 
+        name: "Seed Starters", 
+        description: "72-cell propagation tray with humidity dome and heat mat.",
+        image: "/Seed Starting Systems.jpg"
+      },
+      { 
+        id: 35, 
+        name: "Top Soil", 
+        description: "Premium organic topsoil blend for gardens and lawns. 40kg bag.",
+        image: "/Top Soil.jpg"
+      }
+    ]
+  },
+  {
+    name: "Hardscaping & Decor",
+    items: [
+      { 
+        id: 56, 
+        name: "Square Wire Fence", 
+        description: "Galvanized square wire fencing for property boundaries, garden protection, and livestock enclosures.",
+        image: "/Square Wire Fence.jpg"
+      },
+      { 
+        id: 57, 
+        name: "Cabro Pavers", 
+        description: "Interlocking concrete pavers for driveways, walkways, and patios. Available in various colors and patterns.",
+        image: "/Cabro Pavers.jpg"
+      },
+      { 
+        id: 58, 
+        name: "Hollow Blocks", 
+        description: "Standard hollow concrete blocks for construction of walls, fences, and structural elements.",
+        image: "/Hollow Blocks.jpg"
+      },
+      { 
+        id: 59, 
+        name: "Eclipse Blocks", 
+        description: "Decorative eclipse blocks for creating privacy screens, garden walls, and architectural features.",
+        image: "/Eclipse Blocks.jpg"
+      },
+      { 
+        id: 36, 
+        name: "Quartz Gravel", 
+        description: "Decorative quartz gravel for pathways and garden beds. Available in multiple colors.",
+        image: "/Quartz Gravel.jpg"
+      },
+      { 
+        id: 37, 
+        name: "Precast Concrete for Retaining Wall Blocks", 
+        description: "Precast concrete blocks for building retaining walls. Interlocking design.",
+        image: "/Precast Concrete for Retaining Wall Blocks.png"
+      },
+      { 
+        id: 38, 
+        name: "Flagstones", 
+        description: "Natural flagstone for patios and walkways. Various sizes and thicknesses.",
+        image: "/Flag Stone.jpg"
+      }
+    ]
+  },
+  {
     name: "Hand Tools",
     items: [
       { 
@@ -226,100 +320,6 @@ const categories = [
         name: "Watering Cans", 
         description: "2-gallon metal watering can with brass rose and removable spout.",
         image: "/Watering Cans.jpg"
-      }
-    ]
-  },
-  {
-    name: "Planting & Soil",
-    items: [
-      { 
-        id: 54, 
-        name: "Concrete Planters", 
-        description: "Durable concrete planters in various sizes and shapes. Weather-resistant and perfect for outdoor use.",
-        image: "/Concrete Planters.jpg"
-      },
-      { 
-        id: 65, 
-        name: "Red Soil", 
-        description: "High-quality red soil rich in iron oxide, ideal for gardening, landscaping, and improving soil structure.",
-        image: "/Red Soil.jpg"
-      },
-      { 
-        id: 31, 
-        name: "Planters and Pots", 
-        description: "Assorted ceramic, plastic, and wooden planters in various sizes. UV resistant.",
-        image: "/Planters.jpg"
-      },
-      { 
-        id: 32, 
-        name: "Raised Garden Beds", 
-        description: "Cedar raised garden bed kit 4x8 ft. Easy assembly, no tools required.",
-        image: "/Raised Garden Beds.jpg"
-      },
-      { 
-        id: 33, 
-        name: "Compost Bins", 
-        description: "80-gallon compost bin with aeration vents and removable door for easy access.",
-        image: "/Compost Bin.png"
-      },
-      { 
-        id: 34, 
-        name: "Seed Starters", 
-        description: "72-cell propagation tray with humidity dome and heat mat.",
-        image: "/Seed Starting Systems.jpg"
-      },
-      { 
-        id: 35, 
-        name: "Top Soil", 
-        description: "Premium organic topsoil blend for gardens and lawns. 40kg bag.",
-        image: "/Top Soil.jpg"
-      }
-    ]
-  },
-  {
-    name: "Hardscaping & Decor",
-    items: [
-      { 
-        id: 56, 
-        name: "Square Wire Fence", 
-        description: "Galvanized square wire fencing for property boundaries, garden protection, and livestock enclosures.",
-        image: "/Square Wire Fence.jpg"
-      },
-      { 
-        id: 57, 
-        name: "Cabro Pavers", 
-        description: "Interlocking concrete pavers for driveways, walkways, and patios. Available in various colors and patterns.",
-        image: "/Cabro Pavers.jpg"
-      },
-      { 
-        id: 58, 
-        name: "Hollow Blocks", 
-        description: "Standard hollow concrete blocks for construction of walls, fences, and structural elements.",
-        image: "/Hollow Blocks.jpg"
-      },
-      { 
-        id: 59, 
-        name: "Eclipse Blocks", 
-        description: "Decorative eclipse blocks for creating privacy screens, garden walls, and architectural features.",
-        image: "/Eclipse Blocks.jpg"
-      },
-      { 
-        id: 36, 
-        name: "Quartz Gravel", 
-        description: "Decorative quartz gravel for pathways and garden beds. Available in multiple colors.",
-        image: "/Quartz Gravel.jpg"
-      },
-      { 
-        id: 37, 
-        name: "Precast Concrete for Retaining Wall Blocks", 
-        description: "Precast concrete blocks for building retaining walls. Interlocking design.",
-        image: "/Precast Concrete for Retaining Wall Blocks.png"
-      },
-      { 
-        id: 38, 
-        name: "Flagstones", 
-        description: "Natural flagstone for patios and walkways. Various sizes and thicknesses.",
-        image: "/Flag Stone.jpg"
       }
     ]
   },
@@ -574,7 +574,7 @@ export default function Shop() {
                 
                 {/* WhatsApp Order Button */}
                 <a
-                  href={`https://wa.me/0708396001?text=${encodeURIComponent(`Hello! I'd like to place an order from Baked Brick Company.\n\nOrder Summary:\n${cart.map(item => `- ${item.name} x${item.quantity}`).join('\n')}\n\nTotal Items: ${getCartItemCount()}\n\nPlease provide pricing, payment and delivery details.`)}`}
+                  href={`https://wa.me/254708396001?text=${encodeURIComponent(`Hello! I'd like to place an order from Baked Brick Company.\n\nOrder Summary:\n${cart.map(item => `- ${item.name} x${item.quantity}`).join('\n')}\n\nTotal Items: ${getCartItemCount()}\n\nPlease provide pricing, payment and delivery details.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center mb-3 transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
@@ -694,7 +694,7 @@ export default function Shop() {
                       {/* Purchase Buttons */}
                       <div className="space-y-3">
                         <a
-                          href={`https://wa.me/0708396001?text=${encodeURIComponent(whatsappMessage)}`}
+                          href={`https://wa.me/254708396001?text=${encodeURIComponent(whatsappMessage)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"

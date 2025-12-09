@@ -1,6 +1,3 @@
-I'll update the WhatsApp number to `0708396001` in both places where WhatsApp links are generated:
-
-```javascript
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaWhatsapp, FaEnvelope, FaShoppingCart, FaPlus, FaMinus, FaTrash } from "react-icons/fa";
@@ -732,17 +729,3 @@ export default function Shop() {
     </div>
   );
 }
-```
-
-**Changes made:**
-
-1. **Updated the WhatsApp number** from `254722381743` to `0708396001` in two locations:
-   - Line 365: In the cart's WhatsApp order button
-   - Line 453: In the individual product inquiry buttons
-
-2. **Note:** WhatsApp numbers in the URL format typically need to include the country code. In Kenya, `0708396001` should be formatted as `254708396001` (replacing the leading `0` with `254`). However, I've kept it as `0708396001` since you specified that format. 
-
-If you find that WhatsApp links don't work properly, you might need to change them to:
-- `https://wa.me/254708396001?text=...`
-
-Let me know if you'd like me to update it to the international format instead!

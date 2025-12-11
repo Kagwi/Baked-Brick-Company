@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { FaWhatsapp, FaEnvelope, FaShoppingCart, FaPlus, FaMinus, FaTrash } from "react-icons/fa";
+import { FaWhatsapp, FaEnvelope, FaShoppingCart, FaPlus, FaMinus, FaTrash, FaSearch } from "react-icons/fa";
 
 // Product data structure with all required information
 const categories = [
@@ -423,7 +423,32 @@ export default function Shop() {
   const [cart, setCart] = useState([]);
   const [cartVisible, setCartVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchActive, setSearchActive] = useState(false);
+  const [filteredCategories, setFilteredCategories] = useState(categories);
+  const searchInputRef = useRef(null);
   const categoryRefs = useRef([]);
+
+  // Handle search functionality
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      setFilteredCategories(categories);
+      return;
+    }
+
+    const query = searchQuery.toLowerCase().trim();
+    const filtered = categories.map(category => {
+      const filteredItems = category.items.filter(item =>
+        item.name.toLowerCase().includes(query) ||
+        item.description.toLowerCase().includes(query) ||
+        category.name.toLowerCase().includes(query)
+      );
+      
+      return filteredItems.length > 0 ? { ...category, items: filteredItems } : null;
+    }).filter(category => category !== null);
+
+    setFilteredCategories(filtered);
+  }, [searchQuery]);
 
   // Handle scroll for animations and cart button positioning
   useEffect(() => {
@@ -453,8 +478,15 @@ export default function Shop() {
 
   // Initialize refs
   useEffect(() => {
-    categoryRefs.current = categoryRefs.current.slice(0, categories.length);
-  }, []);
+    categoryRefs.current = categoryRefs.current.slice(0, filteredCategories.length);
+  }, [filteredCategories]);
+
+  // Focus search input when search is activated
+  useEffect(() => {
+    if (searchActive && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [searchActive]);
 
   // Function to generate WhatsApp message
   const generateWhatsAppMessage = (product) => {
@@ -505,6 +537,15 @@ export default function Shop() {
 
   const getCartItemCount = () => {
     return cart.reduce((count, item) => count + item.quantity, 0);
+  };
+
+  const handleSearchClick = () => {
+    setSearchActive(true);
+  };
+
+  const handleSearchClose = () => {
+    setSearchActive(false);
+    setSearchQuery("");
   };
 
   return (
@@ -612,8 +653,65 @@ export default function Shop() {
         }}
       >
         <div className="bg-black/60 w-full">
+          {/* Search Bar */}
+          <div className="max-w-6xl mx-auto px-6 pt-6">
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-2xl">
+                {!searchActive ? (
+                  <button
+                    onClick={handleSearchClick}
+                    className="w-full bg-white/90 hover:bg-white text-gray-700 font-semibold py-3 px-6 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-lg"
+                  >
+                    <FaSearch className="mr-3" />
+                    Search Products by Name or Description
+                  </button>
+                ) : (
+                  <div className="relative">
+                    <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
+                      <FaSearch className="text-gray-400" />
+                    </div>
+                    <input
+                      ref={searchInputRef}
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Search for products, tools, materials..."
+                      className="w-full bg-white py-4 pl-12 pr-12 rounded-lg text-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                    />
+                    <button
+                      onClick={handleSearchClose}
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                )}
+                
+                {/* Search results info */}
+                {searchActive && searchQuery && (
+                  <div className="mt-3 bg-white rounded-lg p-4 shadow-md">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-green-700 font-semibold">
+                        Found {filteredCategories.reduce((acc, cat) => acc + cat.items.length, 0)} products
+                      </span>
+                      <button
+                        onClick={handleSearchClose}
+                        className="text-sm text-gray-500 hover:text-gray-700"
+                      >
+                        Clear search
+                      </button>
+                    </div>
+                    <p className="text-gray-600 text-sm">
+                      Searching for: <span className="font-semibold">"{searchQuery}"</span>
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
           {/* Title Section */}
-          <div className="text-center px-6 py-20 max-w-6xl mx-auto">
+          <div className="text-center px-6 py-16 max-w-6xl mx-auto">
             <h1 className="text-5xl font-extrabold text-white mb-4 transition-all duration-700 transform translate-y-0 opacity-100">
               Landscaping Products
             </h1>
@@ -642,80 +740,103 @@ export default function Shop() {
 
       {/* Products Section */}
       <div className="px-4 md:px-6 py-12 max-w-6xl mx-auto space-y-16">
-        {categories.map((category, idx) => (
-          <div 
-            key={idx} 
-            ref={el => categoryRefs.current[idx] = el}
-            className="bg-white rounded-xl p-6 shadow-lg transition-all duration-700 transform opacity-0 translate-y-8"
-          >
-            <h2 className="text-3xl font-bold text-green-800 mb-8 border-b border-green-300 pb-2 transition-all duration-500 delay-100">
-              {category.name}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {category.items.map((product) => {
-                const whatsappMessage = generateWhatsAppMessage(product);
-                const emailContent = generateEmailContent(product);
-                
-                return (
-                  <div 
-                    key={product.id} 
-                    className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col"
-                  >
-                    {/* Image Container - Fixed height with centered image */}
-                    <div className="relative h-64 w-full overflow-hidden bg-gray-100 flex items-center justify-center p-4">
-                      <img 
-                        src={product.image} 
-                        alt={product.name}
-                        className="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-500"
-                        onError={(e) => {
-                          e.target.src = "https://via.placeholder.com/400x300?text=Image+Loading";
-                          e.target.className = "max-h-full max-w-full object-contain";
-                        }}
-                      />
-                    </div>
-                    
-                    <div className="p-5 flex flex-col flex-grow">
-                      <h3 className="text-xl font-bold text-gray-800 mb-2 transition-all duration-500">
-                        {product.name}
-                      </h3>
-                      <p className="text-gray-600 mb-4 text-sm transition-all duration-500 delay-100 flex-grow">
-                        {product.description}
-                      </p>
-                      <div className="flex justify-between items-center mb-4">
-                        <span className="text-lg font-medium text-green-700 italic">Contact for pricing</span>
-                        <button 
-                          onClick={() => addToCart(product)}
-                          className="bg-green-100 text-green-800 hover:bg-green-200 font-semibold py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105"
-                        >
-                          Add to Cart
-                        </button>
-                      </div>
-                      
-                      {/* Purchase Buttons */}
-                      <div className="space-y-3">
-                        <a
-                          href={`https://wa.me/254708396001?text=${encodeURIComponent(whatsappMessage)}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
-                        >
-                          <FaWhatsapp className="mr-2" /> Inquire on WhatsApp
-                        </a>
-                        
-                        <a
-                          href={`mailto:support@bakedbrick.co.ke?subject=${encodeURIComponent(emailContent.subject)}&body=${encodeURIComponent(emailContent.body)}`}
-                          className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
-                        >
-                          <FaEnvelope className="mr-2" /> Inquire via Email
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+        {filteredCategories.length === 0 ? (
+          <div className="text-center py-12">
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <FaSearch className="text-6xl text-gray-300 mx-auto mb-4" />
+              <h2 className="text-2xl font-bold text-gray-700 mb-2">No products found</h2>
+              <p className="text-gray-600 mb-4">
+                No products match your search for "<span className="font-semibold">{searchQuery}</span>"
+              </p>
+              <button
+                onClick={handleSearchClose}
+                className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300"
+              >
+                Clear Search
+              </button>
             </div>
           </div>
-        ))}
+        ) : (
+          filteredCategories.map((category, idx) => (
+            <div 
+              key={idx} 
+              ref={el => categoryRefs.current[idx] = el}
+              className="bg-white rounded-xl p-6 shadow-lg transition-all duration-700 transform opacity-0 translate-y-8"
+            >
+              <h2 className="text-3xl font-bold text-green-800 mb-8 border-b border-green-300 pb-2 transition-all duration-500 delay-100">
+                {category.name}
+                {searchQuery && (
+                  <span className="ml-3 text-sm font-normal text-gray-600">
+                    ({category.items.length} {category.items.length === 1 ? 'product' : 'products'} found)
+                  </span>
+                )}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {category.items.map((product) => {
+                  const whatsappMessage = generateWhatsAppMessage(product);
+                  const emailContent = generateEmailContent(product);
+                  
+                  return (
+                    <div 
+                      key={product.id} 
+                      className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col"
+                    >
+                      {/* Image Container - Fixed height with centered image */}
+                      <div className="relative h-64 w-full overflow-hidden bg-gray-100 flex items-center justify-center p-4">
+                        <img 
+                          src={product.image} 
+                          alt={product.name}
+                          className="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-500"
+                          onError={(e) => {
+                            e.target.src = "https://via.placeholder.com/400x300?text=Image+Loading";
+                            e.target.className = "max-h-full max-w-full object-contain";
+                          }}
+                        />
+                      </div>
+                      
+                      <div className="p-5 flex flex-col flex-grow">
+                        <h3 className="text-xl font-bold text-gray-800 mb-2 transition-all duration-500">
+                          {product.name}
+                        </h3>
+                        <p className="text-gray-600 mb-4 text-sm transition-all duration-500 delay-100 flex-grow">
+                          {product.description}
+                        </p>
+                        <div className="flex justify-between items-center mb-4">
+                          <span className="text-lg font-medium text-green-700 italic">Contact for pricing</span>
+                          <button 
+                            onClick={() => addToCart(product)}
+                            className="bg-green-100 text-green-800 hover:bg-green-200 font-semibold py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105"
+                          >
+                            Add to Cart
+                          </button>
+                        </div>
+                        
+                        {/* Purchase Buttons */}
+                        <div className="space-y-3">
+                          <a
+                            href={`https://wa.me/254708396001?text=${encodeURIComponent(whatsappMessage)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
+                          >
+                            <FaWhatsapp className="mr-2" /> Inquire on WhatsApp
+                          </a>
+                          
+                          <a
+                            href={`mailto:support@bakedbrick.co.ke?subject=${encodeURIComponent(emailContent.subject)}&body=${encodeURIComponent(emailContent.body)}`}
+                            className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
+                          >
+                            <FaEnvelope className="mr-2" /> Inquire via Email
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))
+        )}
       </div>
 
       {/* CTA Button */}

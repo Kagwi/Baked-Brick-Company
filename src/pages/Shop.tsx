@@ -653,63 +653,6 @@ export default function Shop() {
         }}
       >
         <div className="bg-black/60 w-full">
-          {/* Search Bar */}
-          <div className="max-w-6xl mx-auto px-6 pt-6">
-            <div className="flex justify-center">
-              <div className="relative w-full max-w-2xl">
-                {!searchActive ? (
-                  <button
-                    onClick={handleSearchClick}
-                    className="w-full bg-white/90 hover:bg-white text-gray-700 font-semibold py-3 px-6 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-lg"
-                  >
-                    <FaSearch className="mr-3" />
-                    Search Products by Name or Description
-                  </button>
-                ) : (
-                  <div className="relative">
-                    <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
-                      <FaSearch className="text-gray-400" />
-                    </div>
-                    <input
-                      ref={searchInputRef}
-                      type="text"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      placeholder="Search for products, tools, materials..."
-                      className="w-full bg-white py-4 pl-12 pr-12 rounded-lg text-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                    />
-                    <button
-                      onClick={handleSearchClose}
-                      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
-                    >
-                      ✕
-                    </button>
-                  </div>
-                )}
-                
-                {/* Search results info */}
-                {searchActive && searchQuery && (
-                  <div className="mt-3 bg-white rounded-lg p-4 shadow-md">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-green-700 font-semibold">
-                        Found {filteredCategories.reduce((acc, cat) => acc + cat.items.length, 0)} products
-                      </span>
-                      <button
-                        onClick={handleSearchClose}
-                        className="text-sm text-gray-500 hover:text-gray-700"
-                      >
-                        Clear search
-                      </button>
-                    </div>
-                    <p className="text-gray-600 text-sm">
-                      Searching for: <span className="font-semibold">"{searchQuery}"</span>
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-
           {/* Title Section */}
           <div className="text-center px-6 py-16 max-w-6xl mx-auto">
             <h1 className="text-5xl font-extrabold text-white mb-4 transition-all duration-700 transform translate-y-0 opacity-100">
@@ -718,6 +661,115 @@ export default function Shop() {
             <p className="text-lg text-gray-100 max-w-3xl mx-auto transition-all duration-700 delay-200 transform translate-y-0 opacity-100">
               Discover our full range of professional landscaping tools and materials.
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Search Section - Positioned below the title */}
+      <div className="relative -mt-8 mb-8 z-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex justify-center">
+            <div className="relative w-full max-w-3xl">
+              {!searchActive ? (
+                <div className="relative group">
+                  <button
+                    onClick={handleSearchClick}
+                    className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-8 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+                  >
+                    <div className="flex items-center justify-center">
+                      <div className="relative">
+                        <FaSearch className="mr-3 text-xl animate-pulse" />
+                        <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
+                      </div>
+                      <span className="text-lg">Search All Products</span>
+                      <span className="ml-3 text-sm bg-white/20 px-2 py-1 rounded-full">Click to search</span>
+                    </div>
+                  </button>
+                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-white text-gray-600 text-xs font-medium px-3 py-1 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    Search by name, category, or description
+                  </div>
+                </div>
+              ) : (
+                <div className="relative">
+                  <div className="absolute left-5 top-1/2 transform -translate-y-1/2 z-10">
+                    <FaSearch className="text-green-500 text-xl" />
+                  </div>
+                  <input
+                    ref={searchInputRef}
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Type to search products, tools, materials, descriptions..."
+                    className="w-full bg-white py-5 pl-14 pr-12 rounded-2xl text-lg shadow-2xl focus:outline-none focus:ring-4 focus:ring-green-400 focus:ring-opacity-50 border-2 border-green-300 transition-all duration-300"
+                  />
+                  <button
+                    onClick={handleSearchClose}
+                    className="absolute right-5 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-red-500 transition-colors duration-300 bg-gray-100 hover:bg-gray-200 w-8 h-8 rounded-full flex items-center justify-center"
+                    title="Close search"
+                  >
+                    ✕
+                  </button>
+                  
+                  {/* Search tips */}
+                  <div className="absolute -bottom-8 left-0 right-0 text-center">
+                    <p className="text-sm text-gray-600 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full inline-block">
+                      {searchQuery ? `Found ${filteredCategories.reduce((acc, cat) => acc + cat.items.length, 0)} products` : "Type to start searching"}
+                    </p>
+                  </div>
+                </div>
+              )}
+              
+              {/* Search results info - shown when search is active and has results */}
+              {searchActive && searchQuery && filteredCategories.length > 0 && (
+                <div className="mt-12 bg-white rounded-xl p-6 shadow-lg animate-fadeIn">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-green-800 mb-1">
+                        Search Results
+                      </h3>
+                      <p className="text-gray-600">
+                        Found <span className="font-bold text-green-700">{filteredCategories.reduce((acc, cat) => acc + cat.items.length, 0)}</span> products matching "<span className="font-semibold text-green-800">{searchQuery}</span>"
+                      </p>
+                    </div>
+                    <div className="flex space-x-3 mt-3 md:mt-0">
+                      <button
+                        onClick={handleSearchClose}
+                        className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center"
+                      >
+                        <span className="mr-2">✕</span>
+                        Clear Search
+                      </button>
+                      <button
+                        onClick={() => {
+                          searchInputRef.current?.focus();
+                          setSearchQuery("");
+                        }}
+                        className="bg-green-100 hover:bg-green-200 text-green-800 font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center"
+                      >
+                        <FaSearch className="mr-2" />
+                        New Search
+                      </button>
+                    </div>
+                  </div>
+                  
+                  {/* Quick categories */}
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    <span className="text-sm font-medium text-gray-700">Quick filters:</span>
+                    {["Tools", "Soil", "Fertilizer", "Watering", "Safety"].map((tag) => (
+                      <button
+                        key={tag}
+                        onClick={() => setSearchQuery(tag)}
+                        className={`text-sm px-3 py-1 rounded-full transition-all duration-300 ${searchQuery.toLowerCase() === tag.toLowerCase() 
+                          ? 'bg-green-600 text-white' 
+                          : 'bg-gray-100 hover:bg-gray-200 text-gray-700'}`}
+                      >
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -741,19 +793,38 @@ export default function Shop() {
       {/* Products Section */}
       <div className="px-4 md:px-6 py-12 max-w-6xl mx-auto space-y-16">
         {filteredCategories.length === 0 ? (
-          <div className="text-center py-12">
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <FaSearch className="text-6xl text-gray-300 mx-auto mb-4" />
-              <h2 className="text-2xl font-bold text-gray-700 mb-2">No products found</h2>
-              <p className="text-gray-600 mb-4">
-                No products match your search for "<span className="font-semibold">{searchQuery}</span>"
+          <div className="text-center py-16">
+            <div className="bg-white rounded-2xl p-10 shadow-xl max-w-2xl mx-auto">
+              <div className="relative mb-6">
+                <FaSearch className="text-8xl text-gray-300 mx-auto mb-4" />
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="text-4xl">🔍</div>
+                </div>
+              </div>
+              <h2 className="text-3xl font-bold text-gray-800 mb-3">No matching products found</h2>
+              <p className="text-gray-600 mb-6 text-lg">
+                We couldn't find any products matching "<span className="font-semibold text-green-800">{searchQuery}</span>"
               </p>
-              <button
-                onClick={handleSearchClose}
-                className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300"
-              >
-                Clear Search
-              </button>
+              <div className="space-y-4">
+                <p className="text-gray-500">Try searching for:</p>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {["Planters", "Tools", "Fertilizer", "Soil", "Lawn", "Watering"].map((suggestion) => (
+                    <button
+                      key={suggestion}
+                      onClick={() => setSearchQuery(suggestion)}
+                      className="bg-green-50 hover:bg-green-100 text-green-800 font-medium py-2 px-5 rounded-full transition-all duration-300 hover:scale-105"
+                    >
+                      {suggestion}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  onClick={handleSearchClose}
+                  className="mt-6 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  View All Products
+                </button>
+              </div>
             </div>
           </div>
         ) : (
@@ -761,16 +832,20 @@ export default function Shop() {
             <div 
               key={idx} 
               ref={el => categoryRefs.current[idx] = el}
-              className="bg-white rounded-xl p-6 shadow-lg transition-all duration-700 transform opacity-0 translate-y-8"
+              className="bg-white rounded-2xl p-8 shadow-xl transition-all duration-700 transform opacity-0 translate-y-8"
             >
-              <h2 className="text-3xl font-bold text-green-800 mb-8 border-b border-green-300 pb-2 transition-all duration-500 delay-100">
-                {category.name}
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 border-b border-green-200 pb-4">
+                <h2 className="text-3xl font-bold text-green-800 transition-all duration-500 delay-100">
+                  {category.name}
+                </h2>
                 {searchQuery && (
-                  <span className="ml-3 text-sm font-normal text-gray-600">
-                    ({category.items.length} {category.items.length === 1 ? 'product' : 'products'} found)
-                  </span>
+                  <div className="mt-2 md:mt-0">
+                    <span className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-4 py-2 rounded-full">
+                      {category.items.length} {category.items.length === 1 ? 'product' : 'products'} found
+                    </span>
+                  </div>
                 )}
-              </h2>
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {category.items.map((product) => {
                   const whatsappMessage = generateWhatsAppMessage(product);
@@ -779,33 +854,39 @@ export default function Shop() {
                   return (
                     <div 
                       key={product.id} 
-                      className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex flex-col"
+                      className="bg-gradient-to-br from-gray-50 to-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col group border border-gray-100"
                     >
                       {/* Image Container - Fixed height with centered image */}
-                      <div className="relative h-64 w-full overflow-hidden bg-gray-100 flex items-center justify-center p-4">
+                      <div className="relative h-72 w-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center p-6 group-hover:from-gray-200 group-hover:to-gray-100 transition-all duration-500">
+                        <div className="absolute inset-0 bg-gradient-to-t from-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <img 
                           src={product.image} 
                           alt={product.name}
-                          className="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-500"
+                          className="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700"
                           onError={(e) => {
                             e.target.src = "https://via.placeholder.com/400x300?text=Image+Loading";
                             e.target.className = "max-h-full max-w-full object-contain";
                           }}
                         />
+                        {searchQuery && product.name.toLowerCase().includes(searchQuery.toLowerCase()) && (
+                          <div className="absolute top-3 right-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                            Match
+                          </div>
+                        )}
                       </div>
                       
-                      <div className="p-5 flex flex-col flex-grow">
-                        <h3 className="text-xl font-bold text-gray-800 mb-2 transition-all duration-500">
+                      <div className="p-6 flex flex-col flex-grow">
+                        <h3 className="text-xl font-bold text-gray-800 mb-3 transition-all duration-500 group-hover:text-green-700">
                           {product.name}
                         </h3>
-                        <p className="text-gray-600 mb-4 text-sm transition-all duration-500 delay-100 flex-grow">
+                        <p className="text-gray-600 mb-5 text-sm transition-all duration-500 delay-100 flex-grow leading-relaxed">
                           {product.description}
                         </p>
-                        <div className="flex justify-between items-center mb-4">
+                        <div className="flex justify-between items-center mb-6">
                           <span className="text-lg font-medium text-green-700 italic">Contact for pricing</span>
                           <button 
                             onClick={() => addToCart(product)}
-                            className="bg-green-100 text-green-800 hover:bg-green-200 font-semibold py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105"
+                            className="bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 hover:from-green-200 hover:to-emerald-200 font-semibold py-3 px-5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg group-hover:shadow-md"
                           >
                             Add to Cart
                           </button>
@@ -817,16 +898,16 @@ export default function Shop() {
                             href={`https://wa.me/254708396001?text=${encodeURIComponent(whatsappMessage)}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
+                            className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-4 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-xl group-hover:shadow-lg"
                           >
-                            <FaWhatsapp className="mr-2" /> Inquire on WhatsApp
+                            <FaWhatsapp className="mr-3 text-lg" /> Inquire on WhatsApp
                           </a>
                           
                           <a
                             href={`mailto:support@bakedbrick.co.ke?subject=${encodeURIComponent(emailContent.subject)}&body=${encodeURIComponent(emailContent.body)}`}
-                            className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
+                            className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-4 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-xl group-hover:shadow-lg"
                           >
-                            <FaEnvelope className="mr-2" /> Inquire via Email
+                            <FaEnvelope className="mr-3 text-lg" /> Inquire via Email
                           </a>
                         </div>
                       </div>
@@ -842,7 +923,7 @@ export default function Shop() {
       {/* CTA Button */}
       <div className="text-center mt-16 mb-10">
         <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
-          <button className="bg-green-600 hover:bg-green-700 text-white text-lg font-medium px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+          <button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white text-lg font-bold px-10 py-5 rounded-full shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl">
             Order a Customized Order
           </button>
         </Link>
